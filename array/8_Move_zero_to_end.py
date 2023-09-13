@@ -17,8 +17,9 @@ def Move_all_Zero_at_last(arr,n):
 
     return arr
 
-arr = [1,2,0,4,0,5,0]
-ans = Move_all_Zero_at_last(arr,7) # output [1, 2, 4, 5, 0, 0, 0]
+print()
+arr = [1,2,0,4,0,5,0,1]
+ans = Move_all_Zero_at_last(arr,8) # output [1, 2, 4, 5, 0, 0, 0]
 print(ans)
 
 
