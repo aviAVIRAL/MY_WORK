@@ -1,4 +1,48 @@
-# 1. brute forces by using SET data structure 
+# 1.  brute forces  by using SET data structure 
+#     :- by use of set data structure  tc =o(n) sc =o(n)
+
+def duplicate_remove(arr, n):
+    new_arr = set(arr)
+    return new_arr
+
+arr = [1, 1, 1, 2, 2, 2, 3, 3, 3, 3]
+ans = duplicate_remove(arr, 10)
+
+print(ans)
+
+print() 
+
+# 1. brute forces :-  tc =o(n) sc =o(n)
+
+def find_union(arr):
+    s = set()
+    temp = []
+    
+    for each_element in arr:
+        s.add(each_element)
+    temp.append(s)
+
+    return temp
+
+arr = [1,1,2,2,3,3]
+ans = find_union(arr)
+print(ans)
+
+# 1. brute forces 
+def removeDuplicates(arr): 
+    s = set()
+    for each_element in arr:
+        s.add(each_element)
+    arr[:] = s
+    return arr  
+
+arr = [1, 1, 2, 2, 3, 3]
+ans = removeDuplicates(arr)
+print(ans)
+
+# set() never return the sme odering indexing 
+# code is correct  but leedcode hidden test case will not pass
+# therfore set() data structure is not a good practices
 
 # 2. better approach  tc = o(n)   sc = o(n) *due to extra arr
 
@@ -54,3 +98,5 @@ k = removeDuplicates(arr)
 print("The array after removing duplicate elements is ")
 for i in range(k):
     print(arr[i], end=" ")
+
+print()
