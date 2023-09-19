@@ -14,7 +14,3 @@ print("Original array:", arr)
 
 ans = largest_element(arr)
 print(ans)
-
-
-
-

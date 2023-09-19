@@ -12,6 +12,19 @@ print(ans)
 
 print() 
 
+# 1. brute forces
+
+def dublicate_hata_bhai(arr):
+    s =set()
+    s.update(arr)
+    arr[:] =list(s)
+    return arr
+
+arr = [1, 1, 1, 2, 2, 2, 3, 3, 3, 3]
+ans = dublicate_hata_bhai(arr)
+print(ans)
+
+
 # 1. brute forces :-  tc =o(n) sc =o(n)
 
 def find_union(arr):
@@ -59,6 +72,21 @@ def remove_dublicates(arr):
 
 arr = [1,1,2,2,3,3]
 ans = remove_dublicates(arr)
+print(ans)
+
+# 1.brute approach : 
+# 
+# set mein odering correct kr ne ki trick but time complexity bahut 
+# hee bekar aye ge bhai due to sorted()
+def remove_dublicatesbhai(arr):
+        s = set()
+        s.update(arr)
+        ans = list(s) 
+        arr[:] = sorted(ans) 
+#  ans act as variable that hold list  
+        return arr
+arr = [1,1,2,2,3,3]
+ans = remove_dublicatesbhai(arr)
 print(ans)
 
 
