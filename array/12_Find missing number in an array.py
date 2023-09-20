@@ -45,6 +45,7 @@ arr =[3,0,1,2]
 ans =find_missing_number(arr)
 print(ans)
 
+print("optimal sol" )
 
 #  3. optimal   tc = o(n)  sc = o(1)
 
@@ -52,13 +53,12 @@ print(ans)
 def missingNumber(arr , N): 
 
     summation = (N * (N + 1)) // 2   # here N is not a size of arr :-len(arr) & N is bigest number that its .it will predefine in quetionn gfg or leedcode  
-
-
+  
     X = sum(arr)
 
-    missinG_ELEMENT = summation - X
+    ans = summation - X
     
-    return missinG_ELEMENT
+    return ans
 
 N = 5
 arr =[1,2,3,5]
