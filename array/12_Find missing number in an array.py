@@ -19,6 +19,7 @@ print (ans)
 
 
 # 2 . better  tc = o(2n)  sc = o(n)
+# use kiya hashing  concept
 
 def find_missing_number(arr):
     n = len(arr)
