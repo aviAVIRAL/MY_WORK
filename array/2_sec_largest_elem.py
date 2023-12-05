@@ -1,7 +1,7 @@
 # secound largest element in an arr 
 
 # 1. brute forces approach 
-# tc = 0( n log n ) + o( n )
+# tc = o( n log n ) + o( n )
 
 def sec_largest(arr):
     n = len(arr)
@@ -72,7 +72,7 @@ print(ans)
 # quetion: Secound smallest element in arr
 
 # + float (infinity)
-# symboll chnages 
+# symbol chnages 
 
 
 def sec_smallest_element(arr):

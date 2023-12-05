@@ -16,6 +16,7 @@ def partition(arr, low, high):
     arr[low], arr[j] = arr[j], arr[low]
     return j
 
+
 def quick_sort(arr, low, high):
     if low < high:
         p_index = partition(arr, low, high)

@@ -303,8 +303,9 @@ def pattern_18_same_concept_to_11(n):
             for j in range ( 1,  n-i+1  +1):
                 print("*", end=" ")
              # space
-            for j in range( 1 , i*2-2  +1):
+            for j in range( 1 , 2*(i-1)  +1):
                 print(" ", end =" ")
+
              # star 
             for j in range ( 1,  n-i+1  +1):
                 print("*", end=" ")
@@ -381,7 +382,11 @@ def pattern_13_(n):
       #       or 
       # for j in range( i , 0 , -1 ):    0 is not included//let i=3 than 3,2,1 
       #     print(j, end =" ") 
-
+        #      or 
+        # count = i
+        # for j in range( 1, i +1):
+        #     print(count, end= " ")
+        #     count -=1
         
         print()
 
@@ -451,8 +456,18 @@ def pattern_15_(n):
 # B B
 # C C C
 # D D D D
-# E E E E E
+# E E E E E       
 
+# M-1
+def pattern_16_(n):
+    for i in range(1, n   +1):
+        num = chr(ord("A") + i - 1 ) # also num = chr(65 + i - 1 )
+        for j in range(1 , i   +1):
+            print(num, end= " ")
+         # No need for updation    
+        print()
+
+# M-2
 def pattern_16_(n):
     num = "A"
     for i in range(1,  n   +1):
@@ -508,11 +523,15 @@ def pattern_17_(n):
 
 
 def pattern_18_(n):
+
     for i in range(1,  n   +1):
        
-        num = chr(ord("E") -i + 1 )
-        for j in range(1, i  +1):
+        num = chr(ord("E") - i + 1 )
+
+        for j in range(1,  i   +1):
+        
             print(num , end =" " )
+        
             num = chr(ord(num) + 1) 
 
         print()

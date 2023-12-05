@@ -6,6 +6,7 @@ def merge(arr, low, mid, high):
     # Merging sorted subarrays into temp
     while left <= mid and right <= high:
         if arr[left] <= arr[right]:
+            
             temp.append(arr[left])
             left += 1
         else:
