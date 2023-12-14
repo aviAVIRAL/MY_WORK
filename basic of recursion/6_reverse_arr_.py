@@ -1,6 +1,7 @@
 # reverse the arr 
 
 # by using two pointer
+
 # m-1
 # representation - 1 
 
@@ -50,7 +51,8 @@ if __name__ == "__main__":
     print(arr)
 
 
-# m-3
+# m-3 
+# rep - 1
 # simple methoud { No use of recursion} 
 
 def f(arr):
@@ -85,3 +87,18 @@ if __name__=="__main__":
 #   Result = f(arr)
 #   print( Result )
 
+# .............
+
+# m-3 
+# rep - 2
+# simple methoud { No use of recursion}
+
+def f(arr):
+    n = len(arr)
+    for i in range(n//2):
+        arr[i], arr[n - i - 1] = arr[n - i - 1], arr[i]
+    return arr 
+
+if __name__=="__main__":
+    arr= [11,12,13,14]
+    print(f(arr))

@@ -2,17 +2,18 @@
 # i/p = arr = [ 1, 2, 3, 4 ]
 # 0/p = arr =  [4, 3, 2, 1]
 
-# m- 1
+# m- 1 
+# rep - 1
 # simple methoud with logic 
 
 def reverse_func(arr):
     n = len( arr)
     i = 0
-    r = n - 1 
-    while i <= r:
-        arr[i], arr[r] = arr[r], arr[i]
+    j = n - 1 
+    while i <= j:   # or  i <= n//2
+        arr[i], arr[j] = arr[j], arr[i]
         i += 1
-        r -= 1    
+        j -= 1    
     return arr  
 
 if __name__=="__main__":
@@ -37,6 +38,25 @@ if __name__=="__main__":
 #     arr = [ 1, 2, 3, 4 ]
 #     print(reverse_func(arr))
 
+# ..............
+
+# m-1 
+# rep - 2
+# simple methoud { No use of recursion}
+
+def f (arr):
+
+    n = len(arr)
+    
+    for i in range(n//2):
+        arr[i], arr[n - i - 1] = arr[n - i - 1], arr[i]
+    return arr 
+
+if __name__=="__main__":
+    arr=[11,12,13,14]
+    print(f(arr))
+
+
 # .....................................
 
 # m-2 
@@ -56,5 +76,3 @@ if __name__=="__main__":
     reversed_arr = arr[::-1]
 
     print(reversed_arr)
-  
-
