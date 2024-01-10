@@ -34,10 +34,13 @@ print(ans)
 # Time Complexity: O(n)
 # Space Complexity: O(n) *
 
-def right_rotate_by_k_places(arr,n,k):
-    k = k%n
+def right_rotate_by_k_places(arr, n, k):
+    k = k % n
+
     arr[::] = arr[-k:] + arr[:-k]
+    
     return arr
+
 arr = [1, 2, 3, 4, 5, 6, 7]
 n = 7
 k = 3

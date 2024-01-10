@@ -22,3 +22,22 @@ arr = [ 1,2,3,4,5,6]
 ans = linear_search(arr, 6 , 10)
 print(ans)
 
+
+# ....................................................
+
+def f(arr, k ):
+    n = len(arr)
+    for i in range(n):
+        if k not in arr:
+            return False
+    return True
+
+arr = [ 1,2,4,7]
+k = 4 
+print(f(arr,k))
+         
+
+arr = [ 1,2,4,7]
+k = 87 
+print(f(arr,k))
+         

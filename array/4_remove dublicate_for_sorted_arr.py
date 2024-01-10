@@ -1,5 +1,197 @@
-# 1.  brute forces  by using SET data structure 
-#     :- by use of set data structure  tc =o(n) sc =o(n)
+# 1. brute forces  by using SET data structure 
+#    by use of set data structure  tc = o(nlogn) sc = o(n)
+#    using set data structure : not good for leedcode 
+
+# Q 1 return "Count" / total number of, unique element 
+def f(arr) : 
+    s = set()
+    n = len(arr)
+
+    for i in range(n):
+        s.add(arr[i])
+    
+    k = len(s)
+    j = 0
+    for x in s:
+        arr[j] = x
+        j += 1
+
+    return k  # or return j 
+
+# output will : 3  only 
+if __name__ == "__main__":
+    arr = [1, 1, 2,  2, 2, 3, 3]
+    print(f(arr))
+
+# Q 2 return arr of unique elements only 
+def f(arr) : 
+    s = set()
+    n = len(arr)
+
+    s.update(arr)
+    
+    k = len(s)
+    j = 0
+    for x in s:
+        arr[j] = x
+        j += 1
+
+    return arr[:k]   # or return [:j]
+
+# output will : [1,2,3]  
+if __name__ == "__main__":
+    arr = [1, 1, 2,  2, 2, 3, 3 ]
+    print(f(arr))
+
+# ...............................
+    # concept 
+#  T.C = O(n) is generally better than O(n log n)
+    
+#  .............................. 
+      
+# better tc = o(n)  , sc = o(n)  due to temp [ full logic]
+# r 1
+def f(arr):
+    
+    temp = [arr[0]]
+    i = 0
+    j = 1
+    
+    while j < len(arr):
+        if arr[i] != arr[j]:
+            i += 1
+            arr[i] = arr[j]
+            temp.append(arr[i])  # 
+        j += 1
+
+    return temp    # output = [ 1, 2, 3, 4] 
+
+if __name__ == "__main__":
+    arr = [1,1,   2,2,  3,3,  4,4]
+    print(f(arr))
+
+
+# better tc=o(n) :sc=o(n) due to  sllicing ,use build in function  
+# r 2 
+def fun(arr):
+    
+    # temp = [arr[0]]  no need 
+    i = 0
+    j = 1
+    
+    while j < len(arr):
+        if arr[i] != arr[j]:
+            i += 1
+            arr[i] = arr[j]
+            # temp.append(arr[i])  no need
+        j += 1
+
+    return arr[:i+1]       # or  return i+1  than output : 4 
+   
+if __name__ == "__main__":
+    arr = [1,1,   2,2,  3,3,  4,4]
+    print(fun(arr))
+    # output = [ 1, 2, 3, 4] 
+# ..................................
+
+# 3. optimal approach  tc = 0(n) , sc = 0(1) bolo ki mere logic mein no extra space but quetion demand the extra space therfore sc = o(n) 
+
+# rep 1 :  while loop 
+def f(arr):
+    i = 0
+    j = 1
+    
+    while j < len(arr):
+        if arr[i] != arr[j]:
+            i += 1
+            arr[i] = arr[j]
+        j += 1
+    
+    return i + 1
+
+if __name__ == "__main__":
+    arr = [1, 1, 2, 2, 2, 3, 3]
+    k = f(arr)
+
+    print("Now duplicates removed:")
+    for i in range(k):
+        print(arr[i], end=" ")
+
+# rep 2 ;  while loop ,if elif 
+def f(arr):
+    i = 0
+    j = 1
+    
+    while j < len(arr):
+
+        if arr[i] == arr[j]:
+            j+=1
+        elif arr[i] != arr[j]:
+            i += 1
+            arr[i] = arr[j]
+                                               
+        j += 1      # also use else: here
+           
+    
+    return i + 1
+if __name__ == "__main__":
+    arr = [1, 1, 2, 2, 2, 3, 3]
+    k = f(arr)
+
+    print("Now duplicates removed:")
+    for i in range(k):
+        print(arr[i], end=" ")
+
+# rep 3 , for loop 
+def removeDuplicates(arr):
+    i = 0
+    for j in range(1, len(arr)):
+        if arr[i] != arr[j]:
+            i += 1
+            arr[i] = arr[j]
+    return i + 1
+
+if __name__=="__main__":
+    arr = [1, 1, 2, 2, 2, 3, 3]
+    k = removeDuplicates(arr)
+
+    print(" array after removing duplicate elements is ")
+    for i in range(k):
+        print(arr[i], end=" ")
+
+# output  [1 2 3]
+
+# ..................................
+        
+#    i did it by using map | dictionary | { }  concept 
+
+# unsorted arr = [ 2,4,6,5,4,2,2,4,10,10]
+# output = []
+
+def get_median(arr):
+    n = len(arr)
+    mp = { }
+    for i in range(n):
+        if arr[i] in mp:
+            mp[arr[i]] +=1 
+        else:
+            mp[arr[i]] = 1
+
+    temp = [ ]    
+    for x in mp:
+            temp.append(x)
+
+    return temp 
+
+if __name__ == "__main__":
+    arr = [10, 2, 2, 10, 5, 6 ,3]
+    print (arr)
+    print("remove dulicates", get_median(arr))
+
+
+# ..................................
+
+#  u can ignore it :  Brute forces by own 
 
 def duplicate_remove(arr, n):
     new_arr = set(arr)
@@ -56,24 +248,7 @@ print(ans)
 # set() never return the sme odering indexing 
 # code is correct  but leedcode hidden test case will not pass
 # therfore set() data structure is not a good practices
-
-# 2. better approach  tc = o(n)   sc = o(n) *due to extra arr
-
-def remove_dublicates(arr):
-    i = 0
-    new_arr = [arr[0] ]
-    for j in range(1, len(arr)):
-        if arr[i] != arr[j]:
-            i += 1 
-            arr[i] = arr[j]
-            # new_arr = arr[i] it will return only 3 .'. use append
-            new_arr.append(arr[i])
-    return new_arr
-
-arr = [1,1,2,2,3,3]
-ans = remove_dublicates(arr)
-print(ans)
-
+# .............................................
 # 1.brute approach : 
 # 
 # set mein odering correct kr ne ki trick but time complexity bahut 
@@ -89,42 +264,3 @@ arr = [1,1,2,2,3,3]
 ans = remove_dublicatesbhai(arr)
 print(ans)
 
-
-# 3. optimal approach  tc = 0(n)   sc = 0(1)  { use slicing 
-
-def remove_duplicates(arr):
-    i = 0
-    n = len(arr)
-    for j in range(1, n):
-        if arr[j] != arr[i]:
-            i += 1
-            arr[i] = arr[j]  
-
-    return arr[:i + 1]
-
-
-arr = [1, 1, 1, 2, 2, 2, 3, 3, 3, 3]
-modified_arr = remove_duplicates(arr)
-
-print( modified_arr )
-
-
-# 3. optimal approach  tc = 0(n)   sc = 0(1)  { without slicing 
-
-def removeDuplicates(arr):
-    i = 0
-    for j in range(1, len(arr)):
-        if arr[i] != arr[j]:
-            i += 1
-            arr[i] = arr[j]
-    return i + 1
-
-
-arr = [1, 1, 2, 2, 2, 3, 3]
-k = removeDuplicates(arr)
-
-print("The array after removing duplicate elements is ")
-for i in range(k):
-    print(arr[i], end=" ")
-
-print()

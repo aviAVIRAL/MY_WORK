@@ -1,13 +1,14 @@
 # largest element of arr 
 
 # 1. brute :
-# sort()  build in function 
+
 # sort kr and last element return kr de 
-# tc = same as sorting :
-# tc = o( n log n )  sc = o(1)
+# tc and sc  = same as sorting :
 
 
-# 3. optimal   tc = o(n)  sc = o(1)
+# 3. optimal :
+
+# tc = o(n)  sc = o(1)
 # m1 r1 
 def largest_element(arr):
     largest = arr[0]

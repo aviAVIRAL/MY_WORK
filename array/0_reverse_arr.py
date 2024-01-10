@@ -10,10 +10,12 @@ def reverse_func(arr):
     n = len( arr)
     i = 0
     j = n - 1 
+    
     while i <= j:   # or  i <= n//2
         arr[i], arr[j] = arr[j], arr[i]
         i += 1
         j -= 1    
+        
     return arr  
 
 if __name__=="__main__":
@@ -21,6 +23,7 @@ if __name__=="__main__":
     arr = [ 1, 2, 3, 4 ]
     reverse_func(arr)
     print( arr )
+
 
 # or
 
@@ -68,11 +71,19 @@ if __name__=="__main__":
 
     print(arr)
 
+
+# m 3 rep2 
+
+arr = [1, 2, 3, 4, 5, 6]
+
+arr[:] = arr[::-1]    # update to original arr 
+ 
+print(arr)
+
 # m-3
-# python build in function
 
-    arr = [1, 2, 3, 4, 5, 6, 7]
+arr = [1, 2, 3, 4, 5, 6, 7]
 
-    reversed_arr = arr[::-1]
+reversed_arr = arr[::-1]
 
-    print(reversed_arr)
+print(reversed_arr)
