@@ -58,3 +58,29 @@ def function_factorial_(n):
     print(fac)
 
 function_factorial_(4)
+
+
+# .................
+
+
+#  imp tcs nq t : factorial of a number without * operator 
+
+# ip = 5
+# op = 120
+
+
+def Multi(a , b ):
+    r = 0 
+    for i in range(b):
+        r = r + a 
+    return r 
+
+def fact(n):
+    sol = 1 
+    for i in range(1 ,n+1):
+        sol = Multi( sol , i)
+    return sol 
+
+if __name__=="__main__":
+    k = 5 
+    print( fact( k ))

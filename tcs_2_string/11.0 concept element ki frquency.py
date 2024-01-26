@@ -2,7 +2,7 @@
 
 # concept  each element ki frequency find kr ne ta tarika  
 
-
+# applicable on  lsi tn string both 
 
 
 # differences representations  and type   

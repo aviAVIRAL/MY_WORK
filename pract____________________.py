@@ -1,69 +1,34 @@
 
 
+print()
+lis = ['7','8','9']
+sol =  ''.join(lis)
+print(sol)
+
+
+
+lis = [7, 8, 9]
+sol = ''.join(map(str, lis))
+print(sol)
 
 
 
 
 print()
+lis = [7,8,9]
+sol =  str(lis)
+print(sol)
 
-print()
-
-
-def f( s ):
-    n = len(s )
-    freq = [0] * 200   # 200 imp
-
-    # Counting Frequencies
-    for x in s :
-        if x == ' ':
-            continue
-        else:
-            freq[ord(x) - ord('a')] += 1
-
-    # Printing Non-Repeating Characters
-    for x in s :
-        if freq[ord(x) - ord('a')] == 1 and x != ' ':
-            print(x, end=" ")
-
-if __name__ == "__main__":
-    s  = "take u forward"   
-    f(s) 
+# ......................................
 
 
+lis = [7, 8, 9]
+sol = ''.join(str(num) for num in lis)
+print(sol)
 
-print()
-print()
-print()
-print()
-
-
-def f( s ):
-    n = len(s )
-    freq = [0] * 200   # 200 imp
-
-    # Counting Frequencies
-    for x in s :
-        if x == ' ':
-            continue
-        else:
-            freq[ord(x)] += 1
-
-    print(freq )
-    # Printing Non-Repeating Characters
-    for x in s :
-        if freq[ord(x)] == 1 and x != ' ':
-            print(x, end=" ")
-
-if __name__ == "__main__":
-    s  = "take u forward"   
-    f(s) 
-
-
-
-print()
-print()
-
-
+lis = [7, 8, 9]
+sol = ''.join(map(str, lis))
+print(sol)
 
 
 
