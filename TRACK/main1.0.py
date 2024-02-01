@@ -1,5 +1,5 @@
 
-
+# Track phone number
 
 import phonenumbers
 from phonenumbers import geocoder, carrier
@@ -13,9 +13,9 @@ def validate_phone_number(number):
     except phonenumbers.NumberParseException:
         return False
 
-# Important: The API key is for limited trial; use it carefully
+# Important: The API key is for limited trial; use it carefully 
 Key = "ee8b118e18ff4196b15c7f25db1fee74"
-
+print()
 number = input("Enter phone number with country code:")
 
 if validate_phone_number(number):
@@ -41,5 +41,41 @@ if validate_phone_number(number):
     map_location.save("GoogleMaps.html")
 else:
     print("Invalid phone number. Please enter a valid phone number.")
+
+
+
+
+# ..................
+# if validate_phone_number(number):
+#     print("Valid phone number.")
+
+#     check_number = phonenumbers.parse(number)
+#     number_location = geocoder.description_for_number(check_number, "en")
+#     print(f"Location: {number_location}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
