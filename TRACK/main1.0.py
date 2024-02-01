@@ -17,7 +17,7 @@ def validate_phone_number(number):
         return False
 
 # imp key only limited trial 
-# map location ke liye :key is from open cage free trial  only one time 
+# map location ke liye
 
 Key = "ee8b118e18ff4196b15c7f25db1fee74"
 
@@ -44,7 +44,7 @@ if validate_phone_number(number):
 
     map_location = folium.Map(location=[lat, lng], zoom_start=9)
     folium.Marker([lat, lng], popup=number_location).add_to(map_location)
-    map_location.save("mylocation.html")
+    map_location.save("GoogleMaps.html")
 else:
     print("Invalid phone number. Please enter a valid phone number.")
 
