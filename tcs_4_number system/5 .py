@@ -1,99 +1,56 @@
 
 
-# .........................
-# important concept 
-# .........................
 
-print()
-
-s =  "avijiyl"
-
-x = s.split()
-
-print(x)
 
 
 print()
 
 
-s =  "avi ji yl"
+n = 28
 
-x = s.split()
+binary = [0] * 32
 
-print(x)
+i = 0
+
+while n:
+    binary[i] = n % 2
+    i += 1
+    n //= 2
+
+for ind in range(i - 1, -1, -1):
+    print(binary[ind], end="")
+
 
 
 print()
 
 
 
-s = "1234"
 
-x = s.split()
 
-print(x)
+print()
+
+
+n = 28
+
+binary = [0] * 32
+
+i = 0
+
+while n > 0  :
+    binary[i] = n % 2
+    i += 1
+    n //= 2
+
+for j in range(i - 1 , -1, -1):
+    print(binary[j], end="")
+
+
 
 print()
 
 
-s = "1 2 3 4 "
-
-x = s.split()
-
-print(x)
-
-
-print()
-# .........................
-
-# s is a list. It's a list that contains three string
-s = ['avi' , 'ji' , 'hy']
-
-ans = ''.join(s)
-
-print(ans)
-
-print()
-lis = ['1','2','3','4']
-sol =  ''.join(lis)
-print(sol)
 
 
 
-lis = [1 , 2, 3, 4]
-sol = ''.join(map(str, lis))
-print(sol)
 
-
-
-lis =  [1 , 2, 3, 4]
-sol = ''.join(str(num) for num in lis)
-print(sol)
-
-lis = [1 , 2, 3, 4]
-sol = ''.join(map(str, lis))
-print(sol)
-
-# ......................
-
-print()
-
-s = "avi"
-x = list(s)
-print(x)
-print()
-
-s = "avi ji yl"
-x = list(s)
-print(x)
-print()
-
-s = "1234"
-x = list(s)
-print(x)
-print()
-
-s = "1 2 3 4"
-x = list(s)
-print(x)
-print()

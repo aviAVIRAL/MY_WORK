@@ -8,53 +8,27 @@
 
 
 
-
-
-
-
+# representation hai b hai see just see 
 
 n = 28
-binary = []
+
+arr = [0] * 32
+
 i = 0
 
-while n:
-    binary.append(n % 2)
+while n :      # while n > 0 :  # while n != 0 : 
+    arr[i] = n % 2
     i += 1
     n //= 2
 
-for ind in range(i - 1, -1, -1):
-    print(binary[ind], end="")
+
+ans = arr[:i]
+
+sol = ans[::-1]
 
 
-print()
-print()
+print(sol)
 
-n = 28
-binary = [0] * 32
-i = 0
+fianl_sol = ''.join(map(str,sol))
 
-while n > 0:
-    binary[i] = n % 2
-    i += 1
-    n //= 2
-
-for ind in range(i - 1, -1, -1):
-    print(binary[ind], end="")
-
-
-print()
-print()
-
-n = 28
-binary = [0] * 32
-i = 0
-
-while n > 0:
-    binary[i] = n % 2
-    i += 1
-    n //= 2
-
-ans = binary[:i]
-print(ans)
-
-
+print(fianl_sol)

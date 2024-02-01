@@ -1,18 +1,35 @@
 
 
-s = ['avi' , 'ji' , 'hy']
 
-ans = ''.join(s)
+# build in function : 
+
+s = "1011"
+
+ans = int(s, 2)
+
+print(ans)
+
+
+print()
+
+s = 18
+
+ans = bin(s)[2:]
 
 print(ans)
 
 
 
-x = ['avi' , 'ji' , 'hy']
-
-ans = ''.join(s)
-
-print(ans)
 
 
-# x is a list. It's a list that contains three string
+
+
+
+
+
+
+
+
+
+
+
