@@ -15,12 +15,12 @@
 # build in function : 
 
 
-s = 28
+s = 17
 ans = oct(s)[2:]
 print(ans)
 
 
-
+# op 21
 
 
 
