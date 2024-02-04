@@ -1,28 +1,64 @@
 
 
 
+def DecimaltoOctal(decimal):
+    octal = 0
+    i = 0
+    while decimal != 0:
+        rem = decimal % 8
+        octal += rem * 10 ** i
+        i += 1
+        decimal = decimal // 8
+    return octal
+
+if __name__ == "__main__":
+    decimal = 136
+    print(f"The Octal conversion of the given decimal number is {DecimaltoOctal(decimal)}")
 
 
-import pandas as pd
 
-# Create a sample CSV file
-data = {
-    'Name': ['Alice', 'Bob', 'Charlie', 'David'],
-    'Age': [25, 30, 22, 28],
-    'City': ['New York', 'San Francisco', 'Los Angeles', 'Chicago']
-}
+print()
+print()
 
-df = pd.DataFrame(data)
 
-# Write the DataFrame to a CSV file
-df.to_csv('sample_data.csv', index=False)
 
-# Read the CSV file into a new DataFrame
-new_df = pd.read_csv('sample_data.csv')
+n = 136
+arr = [0]*32
+i = 0
+while decimal != 0:
+    arr[i] = decimal % 8
+    i += 1
+    decimal = decimal // 8
+for j in range(i - 1 , -1, -1):
+    print(arr[j], end="")
 
-# Display the original and new DataFrames
-print("Original DataFrame:")
-print(df)
 
-print("\nDataFrame read from CSV:")
-print(new_df)
+
+print()
+print()
+
+
+
+# represent : imp 
+
+def DecimaltoOctal(decimal):
+
+    temp =""
+    arr = [0]*32
+    i = 0
+    while decimal != 0:
+        arr[i] = decimal % 8
+        i += 1
+        decimal = decimal // 8
+    
+    for j in range(i - 1 , -1, -1):
+        temp += str(arr[j])
+
+    return temp
+
+if __name__ == "__main__":
+    print(DecimaltoOctal(136))
+
+
+
+
