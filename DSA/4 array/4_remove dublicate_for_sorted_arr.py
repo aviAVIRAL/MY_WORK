@@ -49,11 +49,12 @@ if __name__ == "__main__":
     
 #  .............................. 
       
-# better tc = o(n)  , sc = o(n)  due to temp [ full logic]
+# 2  better tc = o(n)  , sc = o(n)  due to temp [ full logic]
 # r 1
+print()
 def f(arr):
     
-    temp = [arr[0]]
+    temp = []
     i = 0
     j = 1
     
@@ -62,7 +63,8 @@ def f(arr):
             i += 1
             arr[i] = arr[j]
             temp.append(arr[i])  # 
-        j += 1
+        else:
+            j += 1
 
     return temp    # output = [ 1, 2, 3, 4] 
 
@@ -75,7 +77,7 @@ if __name__ == "__main__":
 # r 2 
 def fun(arr):
     
-    # temp = [arr[0]]  no need 
+    # temp = [ ]  no need 
     i = 0
     j = 1
     
@@ -92,6 +94,7 @@ if __name__ == "__main__":
     arr = [1,1,   2,2,  3,3,  4,4]
     print(fun(arr))
     # output = [ 1, 2, 3, 4] 
+
 # ..................................
 
 # 3. optimal approach  tc = 0(n) , sc = 0(1) bolo ki mere logic mein no extra space but quetion demand the extra space therfore sc = o(n) 
@@ -111,9 +114,7 @@ def f(arr):
 
 if __name__ == "__main__":
     arr = [1, 1, 2, 2, 2, 3, 3]
-    k = f(arr)
-
-    print("Now duplicates removed:")
+    k = f(arr)      # k = 3 ayega 
     for i in range(k):
         print(arr[i], end=" ")
 
@@ -162,17 +163,19 @@ if __name__=="__main__":
 # output  [1 2 3]
 
 # ..................................
+# ..................................
         
 #    i did it by using map | dictionary | { }  concept 
 
 # unsorted arr = [ 2,4,6,5,4,2,2,4,10,10]
 # output = []
 
+# r1 map
 def get_median(arr):
     n = len(arr)
     mp = { }
     for i in range(n):
-        if arr[i] in mp:
+        if arr[i] in mp:  # in operator
             mp[arr[i]] +=1 
         else:
             mp[arr[i]] = 1
@@ -188,6 +191,64 @@ if __name__ == "__main__":
     print (arr)
     print("remove dulicates", get_median(arr))
 
+# r2 map 
+
+
+def f(arr):
+    mp = { }
+    n = len(arr)
+    for i in range(n): 
+        if arr[i] not in mp:  # not in operator
+            mp[arr[i]] = 1
+        else:
+            mp[arr[i]] += 1
+    
+    temp = []
+    for x in mp: 
+        temp.append(x)
+    return temp
+if __name__=="__main__":
+    arr = [1,1,1,2,2,3,3,4,5,5]
+    print(f(arr))
+
+# best representation 
+# tc = o(n) + o(n) | sc = o(n)    worst mein all unique elemnet ho to mp mein nth space complexity and temp mein jayega therfor space compacity will be o(n)
+print()
+
+def f(arr):
+   
+    mp = { }     # n = len(arr)   arr[i] => no need to write  
+    for y in arr: 
+        if y not in mp:
+            mp[y] = 1
+        else:
+            mp[y] += 1
+    
+    temp = []
+    for x in mp: 
+        temp.append(x)
+    return temp
+if __name__=="__main__":
+    arr = [1,1,1,2,2,3,3,4,5,5]
+    print(f(arr))
+
+# representation 
+def removeDuplicates( arr): 
+    mp={}
+    for x in arr: 
+        if x not in mp :
+            mp[x] = 1
+        else :
+            mp[x]+=1 
+    j = 0
+    for y in mp :
+        arr[j] = y
+        j+= 1
+
+    return j
+if __name__=="__main__":
+    arr = [9,1,8,2,2,3,3,4,5,5]
+    print(removeDuplicates(arr))
 
 # ..................................
 

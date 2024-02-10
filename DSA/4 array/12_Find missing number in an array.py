@@ -18,18 +18,19 @@ ans = missing_value(arr )
 print (ans)
 
 
-# 2 . better  tc = o(2n)  sc = o(n)
-# use kiya hashing  concept
+# 2 . better  tc = o(n + n)  sc = o(n)
+
+# use kiya " hashing " ~> frequenc : concept
 
 def find_missing_number(arr):
     n = len(arr)
-    Hash = [0] * (n + 20)
+    freq = [0] * 100
 
     for i in range(n):
-        Hash[arr[i]] += 1
+        freq[arr[i]] += 1
 
-    for i in range(1, n + 20):
-        if Hash[i] == 0:
+    for i in range(1, 100):
+        if freq[i] == 0:
             break
 
     return i
@@ -50,7 +51,6 @@ print("optimal sol" )
 
 #  3. optimal   tc = o(n)  sc = o(1)
 
-
 def missingNumber(arr , N): 
 
     summation = (N * (N + 1)) // 2   # here N is not a size of arr :-len(arr) & N is bigest number that its .it will predefine in quetionn gfg or leedcode  
@@ -70,3 +70,8 @@ N = 5
 arr =[0,1,2,3,5]
 ans =missingNumber(arr, N )
 print(ans)
+
+# concept 
+N = 3 # max number in arr [ 1 , 2 , 3]
+summation = (N * (N + 1)) // 2
+print(summation)  

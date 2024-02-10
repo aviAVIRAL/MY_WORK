@@ -1,9 +1,9 @@
 # LINEAR SEARCH 
 # tc = o(n)   sc = o(1)
 
-def linear_search(arr,n,nums):
-    for i in range (n):
-        if arr[i] == nums:
+def f(arr, n, k):
+    for i in range(n):
+        if arr[i] == k:
            return i
     
     else:  # imp ~ * pura loop iterate ke baad else mein jana hai  
@@ -11,15 +11,16 @@ def linear_search(arr,n,nums):
         
       
 arr = [ 1,2,3,4,5,6] 
-
-ans = linear_search(arr, 6 , 4)
+n = len(arr)
+k = 4
+ans = f(arr, n , k)
 print(ans)
 
 print()
       
 arr = [ 1,2,3,4,5,6] 
 
-ans = linear_search(arr, 6 , 10)
+ans = f(arr, 6 , 10)
 print(ans)
 
 

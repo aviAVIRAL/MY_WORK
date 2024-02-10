@@ -1,10 +1,32 @@
 # largest element of arr 
 
-# 1. brute :
+ 
+
+
+# 1. brute  :
 
 # sort kr and last element return kr de 
-# tc and sc  = same as sorting :
 
+# sorted( ) =>  tc = O(n log n)  sc = O(n) 
+
+# concept
+# , O(n log n) is generally considered better than O(n) for sorting 
+# 1
+def f(arr):
+    n = len(arr)
+    arr.sort()
+    return arr[n-1]
+
+if __name__=="__main__":
+    arr = [3,7,9,2]
+    print(f(arr))
+# 2
+max() 
+
+# 2 better  :-  aapne aap merget dor kr fir last element return kr de
+
+# tc = o(nlogn)
+# sc = o(1)
 
 # 3. optimal :
 

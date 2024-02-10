@@ -1,9 +1,15 @@
+
+# Example 1:
+# Input: N = 5, array[] = {1,2,3,4,5}
+# Output: 2,3,4,5,1
+
+
 # 1. brute forces  tc = o(n)  sc =o(n)
 
 # r1  
 def rotate_by_1_place(arr):
     n = len(arr)
-    temp = [0] * n
+    temp = [0] * n  # imp temp is fill with nth number of Zeros
     
     for i in range(1, n):
         temp[i - 1] = arr[i]
@@ -16,7 +22,27 @@ print("original arr:",arr)
 ans = rotate_by_1_place(arr)
 print("rotaed by 1 :" ,ans)
 
-# r2
+# r1.O append
+
+
+def rotate_by_1_place(arr):
+    n = len(arr)
+    temp = [ ]  # temp khali hai
+    m = len(temp)
+    
+    for i in range(1, n):
+        temp.append( arr[i] )
+    temp[m - 1] = arr[0]  # This line should be outside the loop
+    
+    return temp
+
+arr = [1, 2, 3, 4, 5]
+print("original arr:",arr)
+ans = rotate_by_1_place(arr)
+print("rotaed by 1 :" ,ans)
+
+
+# r2 while loop
 def f(arr) : 
     n = len(arr)
     temp = [0]* n
@@ -73,15 +99,16 @@ if __name__ == "__main__":
 
 # build in function slicing operator
 
-    
+    # Time Complexity: O(n)
+    # Space Complexity: O(1) reason arr[:] update ho ra ha hai in its own arr 
 arr = [1 , 2, 3 ,4 ,5,6]
 
 n = len(arr)
 
 arr[:] = arr[1:n] + arr[:1]
 
-print(arr)
-
+print(arr)  # slicing O(n) sc laga ta hai but yaha 
+           #  Space Complexity: O(1) :-  arr[:] syntax represents a slice assignment that modifies the original array arr in-place
 # ........................
 
 # slicing conept 
