@@ -37,8 +37,9 @@
 
 # ........................
 # variety 1 : same pos n neg el
+print(" Varirty 1 : equal +vs -ve ")
 
-# brute  by Avi  tc = 0(2n)   sc =  0(n)
+# brute  by Avi  tc = 0(n + n)   sc =  0(n)
 
 def f(arr, n):
     pos = []
@@ -77,25 +78,25 @@ if __name__=="__main__":
 # Space Complexity:  O(N/2 + N/2) = O(N) { N/2 space required for each of the positive and negative element arrays, where N = size of the array A}.
 
 def f(arr):
+    n = len(arr)
     pos = []
     neg = []
   
-    for i in range(len(arr)):
+    for i in range(n):
         if arr[i] > 0:
             pos.append(arr[i])
         else:
             neg.append(arr[i])
   
-    for i in range(len(pos)):
+    for i in range(n//2):  # imp  
         arr[2 * i] = pos[i]
-    for i in range(len(neg)):
         arr[2 * i + 1] = neg[i]
   
     return arr
 
 if __name__=="__main__":
     arr = [1,2,-4,-5]
-    k = f(arr,len(arr))
+    k = f(arr)
 
     for x in k:
         print(x, end = " ")
@@ -103,7 +104,7 @@ if __name__=="__main__":
 
 # optimal   tc = 0(n) sc = 0(1)
     
-def RearrangebySign(arr): 
+def f(arr): 
     n = len(arr)
     
     temp = [0] * n
@@ -123,10 +124,86 @@ def RearrangebySign(arr):
     return temp
     
 # Test the function
-A = [1,2,-4,-5]
-ans = RearrangebySign(A)
-print(ans)
+if __name__=="__main__":
+    arr = [1,2,-4,-5]
+    k = f(arr)
+    for x in k:
+        print(x, end = " ")
+    print()
 
 # ........................
 # variety 2 : not same pos n neg el
- 
+
+# Example 1:
+
+# Input:
+# arr[] = {1,2,-4,-5,3,4}, N = 6
+# Output:
+# 1 -4 2 -5 3 4
+
+# Explanation: 
+
+# Positive elements = 1,2
+# Negative elements = -4,-5
+# To maintain relative ordering, 1 must occur before 2, and -4 must occur before -5.
+# Leftover positive elements are 3 and 4 which are then placed at the end of the array.
+
+# Example 2:
+# Input:
+# arr[] = {1,2,-3,-1,-2,-3}, N = 6
+# Output:
+# 1 -3 2 -1 3 -2
+# Explanation: 
+
+# Positive elements = 1,2
+# Negative elements = -3,-1,-2,-4
+# To maintain relative ordering, 1 must occur before 2.
+# Also, -3 should come before -1, and -1 should come before -2.
+# After alternate ordering, -2 and -4 are left, which would be placed at the end of the ans array.
+print(" Varirty 2 : unequal +vs -ve ")
+
+print()
+def RearrangebySign(arr, n):
+    pos = []
+    neg = []
+    
+    for i in range(n):
+        if arr[i] > 0:
+            pos.append(A[i])
+        else:
+            neg.append(A[i])
+    
+    if len(pos) < len(neg):
+        for i in range(len(pos)):
+           arr[2*i] = pos[i]
+           arr[2*i+1] = neg[i]
+
+        k = len(pos)*2
+        for i in range(len(pos), len(neg)):
+            arr[k] = neg[i]
+            k += 1
+    
+
+    else:
+        for i in range(len(neg)):
+           arr[2*i] = pos[i]
+           arr[2*i+1] = neg[i]
+        
+        k = len(neg)*2
+        for i in range(len(neg), len(pos)):
+            arr[k] = pos[i]
+            k += 1
+    
+    return arr
+
+# Array initialization
+n = 6
+A = [1, 2, -4, -5, 3, 4]
+
+ans = RearrangebySign(A, n)
+
+for i in range(len(ans)):
+    print(ans[i], end=" ")
+
+
+

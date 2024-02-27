@@ -1,17 +1,3 @@
-
-
-
-
-
-
-
-
-
-%-------------------------
-% Resume in Latex
-% Author : Jake Gutierrez
-% Based off of: https://github.com/sb2nov/resume
-% License : MIT
 %------------------------
 
 \documentclass[letterpaper,11pt]{article}
@@ -124,8 +110,8 @@
     \textbf{\Huge \scshape Aviral Sharma} \\ \vspace{1pt}
     \small +91 987-167-6949 $|$ \href{https://mail.google.com/mail/u/0/?pli=1#inbox}{\underline{aviralsharmaknp@gmail.com}} $|$ 
     \href{https://www.linkedin.com/feed/}{\underline{linkedin/avi}} $|$
-    \href{https://github.com/aviAVIRAL/MY_WORK}{\underline{github/avi}}$|$
-    \href{https://leetcode.com/aviralsharmaknp/}{\underline{leedcode/avi}}$|$
+    \href{https://github.com/aviAVIRAL/MY_WORK}{\underline{github/avi}} $|$
+    \href{https://leetcode.com/aviralsharmaknp/}{\underline{leedcode/avi}} $|$
     
     % \href{https://www.linkedin.com/feed/}{\underline{linkedin/avi}}$|$
     % \href{https://www.linkedin.com/feed/}{\underline{linkedin/avi}}$|$
@@ -205,6 +191,9 @@
             \resumeItem{Employed the OpenCageGeocode API for accurate geocoding.}
             \resumeItem{Implemented Folium for interactive map visualization.}
             \resumeItem{Enables users to track phone number locations effectively.}
+
+     \textbf{\href{https://drive.google.com/drive/u/1/home}{\textbf{video.link/avi}}} {$|$} {\href{https://github.com/aviAVIRAL/MY_WORK/tree/main/1.%20PROJECTS/Project%201%20TRACK%20PHONE%20NUMBER}{\textbf{github.come/avi}}}\\
+            
           \resumeItemListEnd
       \resumeProjectHeading
           {\textbf{Movie recommendation system} $|$ \emph{Python, Deep Learning, Pandas, scikit-learn}}{May 2023 -- May 2023}
@@ -212,6 +201,8 @@
             \resumeItem{Developed a personalized movie recommendation system using Python.}
             \resumeItem{Employed deep learning, pandas, and scikit-learn with the MovieLens dataset.}
             \resumeItem{Analyzed user preferences and historical data to suggest personalized movie recommendations}
+
+             \textbf{\href{https://drive.google.com/drive/u/1/home}{\textbf{video.link/avi}}} {$|$} {\href{https://github.com/aviAVIRAL/MY_WORK/tree/main/1.%20PROJECTS/Project%201%20TRACK%20PHONE%20NUMBER}{\textbf{github.come/avi}}}\\
             
           \resumeItemListEnd
 
@@ -238,8 +229,8 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{:  Python, C, C++, Go} \\
-     \textbf{Frameworks}{: React.js, Django} \\
+     \textbf{Languages}{: Python, C, C++, Go} \\
+     \textbf{Frameworks}{: React.js} \\
      \textbf{Tools & Environment}{: Visual Studio Code, PyCharm, Git} \\
      \textbf{Web Technologies}{: HTML, CSS} \\
      \textbf{Database}{: SQL} \\
@@ -260,16 +251,16 @@
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
      
-     \textbf{Chess Rating}{:  ChessLive.com global rating Blitiz 776 $|$ 3814+ games play $|$} {\href{https://www.chess.com/stats/overview/aviralsharmaknp?}{chess.come/avi}}\\
-     
-     
-     \textbf{TCS code vita}{:  TCS CodeVita global rank 5430 $|$ INDIA rank under 2k $|$ } {\href{https://drive.google.com/file/d/11AlrrltA985cYADN4LY8U_vni2o0B9Ll/view?usp=drive_link}{drive.come/avi}}\\
-     
-     
-     \textbf{DSA}{:  250 + Quality quetions solved in different platforms $|$} {\href{https://leetcode.com/aviralsharmaknp/}{leedcode.come/avi}}\\
-     
-     
+     \textbf{Chess Rating}{: Global rating Blitz 776 $|$ 3814+ games play $|$} {\href{https://www.chess.com/stats/overview/aviralsharmaknp/0?}{\textbf{chess.come/avi}}}\\
      \textbf{Football}{: Play regional level football as left winger} 
+     
+     \textbf{TCS code vita}{: TCS code-vita global rank 5430 $|$ INDIA rank under 2k/20k $|$} {\href{https://drive.google.com/file/d/11AlrrltA985cYADN4LY8U_vni2o0B9Ll/view?usp=drive_link}{\textbf{drive.come/avi}}}\\
+     
+     
+     \textbf{DSA}{: 250 + Quality quetions solved in different platforms $|$} {\href{https://leetcode.com/aviralsharmaknp/}{\textbf{leedcode.come/avi}}}\\
+     
+     
+     
      
   
     
@@ -290,7 +281,3 @@
 
 %-------------------------------------------
 \end{document}
-
-
-
-
