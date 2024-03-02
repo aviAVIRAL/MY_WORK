@@ -1,46 +1,59 @@
 
 
-# Find the Majority Element that occurs more than N/2 times
-# Problem Statement: Given an array of N integers, write a program to return an element that occurs more than N/2 times in the given array. You may consider that such an element always exists in the array.
+n = 3 
+ans =[[0] * n for _ in range(n)]
+print()
+print(ans)
+print()
+# ....................................
+n = len(ans)
+m = len(ans[0])
+for i in range (n) :
+    for j in range (m ):
+        print(ans[i][j], end= " ")
+    print()
+# ..............................................
+# for i in range(len(rotated)):
+#         for j in range(len(rotated[0])):
+#             print(rotated[i][j], end=" ")
+#         print()
+    
+print()
+print()
+print()
 
-# Examples
-# Example 1:
-# Input Format: N = 3, nums[] = {3,2,3}
-# Result: 3
-# Explanation: When we just count the occurrences of each number and compare with half of the size of the array, you will get 3 for the above solution. 
 
-# Example 2:
-# Input Format:  N = 7, nums[] = {2,2,1,1,1,2,2}
 
-# Result: 2
+n = 4
+m = 7
+ans =[[0] * m for _ in range(n)]
+print()
+print()
+print(ans)# ....................................
+n = len(ans)
+m = len(ans[0])
+for i in range (n) :
+    for j in range (m ):
+        print(ans[i][j], end= " ")
+    print()
+# ..........
+print()
+print()
 
-# Explanation: After counting the number of times each element appears and comparing it with half of array size, we get 2 as result.
 
-# Example 3:
-# Input Format:  N = 10, nums[] = {4,4,2,4,3,4,4,3,2,4}
+n = 4
+m = 7
+ans =[[0] * m for _ in range(n)]
+print()
+print()
+print(ans)# ....................................
+n = len(ans)
+m = len(ans[0])
+for i in range (n) :
+    for j in range (m ):
+        print(ans[i][j], end= " ")
+    print()
+# ..........
 
-# Result: 4
 
-def f( arr ):
-    n = len(arr)
-    # ans  = n / 2
 
-    mp = {}
-    for x in arr : 
-        if x not in mp : 
-            mp[x] = 1
-        else :
-            mp[x] += 1 
- 
-    maxi = 0 
-    for x in mp : 
-        if mp[x] > n/2 :
-            maxi = max(maxi, x )
-
-    return maxi 
-
-if __name__=="__main__": 
-    arr =  [4,4,2,4,3,4,4,3,2,4]
-    print(f(arr))
-
-      
