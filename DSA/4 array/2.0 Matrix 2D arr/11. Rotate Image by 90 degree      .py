@@ -22,7 +22,7 @@
 # Explanation: Rotate the matrix simply by 90 degree clockwise and return the matrix
 
 
-# .........   concept  temp [0]    ........
+# .........   concept  temp [0] * n  in matrix   ........
 
 # mat = [[1, 2, 3,4,5],
 #        [1, 2, 3,4,5],
@@ -31,7 +31,7 @@
 # n = len(mat)
 # m = len(mat[0])
     
-# temp = [[0] * m for _ in range(n)]
+# temp = [ [0] * m for _ in range(n) ]
 
 
 # for i in range(len(temp)):
@@ -43,7 +43,7 @@
 # 0 0 0 0 0
 # 0 0 0 0 0
 # 0 0 0 0 0
-# .............................
+# .................               ............
 
 
 # brute  tc n^2  sc n^2
@@ -52,7 +52,6 @@ def f(matrix):
     n = len(matrix)
 
     temp = [[0] * n for _ in range(n)]
-
     
     for i in range(n):
         for j in range(n):
@@ -68,24 +67,36 @@ if __name__ == "__main__":
             print(k[i][j], end=" ")
         print()
 
+ 
+
+print()
+# optimal  tc same  but sc  1
+
+def f(matrix):
+    n = len(matrix)
+                    #   col ki len no need  
+# 1.transpose
+    for i in range(n):
+        for j in range( i+1, n):
+            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+# 2 revrse each  row  :  not full matrix caerfull
+    for i in range(n):
+        matrix[i].reverse()
+    
+    return matrix 
+
+if __name__ == "__main__":
+    mat = [[1, 2, 3],
+           [4, 5, 6], 
+           [7, 8, 9]]
+    k = f(mat)
+    for i in range(len(k)):
+        for j in range(len(k[0])):
+            print(k[i][j], end= " ")
+        print()
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print("hfr ")
 
 
 

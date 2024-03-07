@@ -101,21 +101,17 @@
 \begin{document}
 
 %----------HEADING----------
-% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
-%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
-% \end{tabular*}
+
 
 \begin{center}
     \textbf{\Huge \scshape Aviral Sharma} \\ \vspace{1pt}
-    \small +91 987-167-6949 $|$ \href{https://mail.google.com/mail/u/0/?pli=1#inbox}{\underline{aviralsharmaknp@gmail.com}} $|$ 
+    \small India,Delhi $|$ 
+    \small +91 987-167-6949 $|$
+    \href{https://mail.google.com/mail/u/0/?pli=1#inbox}{\underline{aviralsharmaknp@gmail.com}} $|$ 
     \href{https://www.linkedin.com/feed/}{\underline{linkedin/avi}} $|$
     \href{https://github.com/aviAVIRAL/MY_WORK}{\underline{github/avi}} $|$
-    \href{https://leetcode.com/aviralsharmaknp/}{\underline{leedcode/avi}} $|$
+    \href{https://leetcode.com/aviralsharmaknp/}{\underline{leetcode/avi}} $|$
     
-    % \href{https://www.linkedin.com/feed/}{\underline{linkedin/avi}}$|$
-    % \href{https://www.linkedin.com/feed/}{\underline{linkedin/avi}}$|$
-
 \end{center}
 
 
@@ -155,26 +151,6 @@
       \resumeItemListEnd
       
 
-    % \resumeSubheading
-    %   {Information Technology Support Specialist}{Sep. 2018 -- Present}
-    %   {Southwestern University}{Georgetown, TX}
-    %   \resumeItemListStart
-    %     \resumeItem{Communicate with managers to set up campus computers used on campus}
-    %     \resumeItem{Assess and troubleshoot computer problems brought by students, faculty and staff}
-    %     \resumeItem{Maintain upkeep of computers, classroom equipment, and 200 printers across campus}
-    % \resumeItemListEnd
-
-    % \resumeSubheading
-    %   {Artificial Intelligence Research Assistant}{May 2019 -- July 2019}
-    %   {Southwestern University}{Georgetown, TX}
-    %   \resumeItemListStart
-    %     \resumeItem{Explored methods to generate video game dungeons based off of \emph{The Legend of Zelda}}
-    %     \resumeItem{Developed a game in Java to test the generated dungeons}
-    %     \resumeItem{Contributed 50K+ lines of code to an established codebase via Git}
-    %     \resumeItem{Conducted  a human subject study to determine which video game dungeon generation technique is enjoyable}
-    %     \resumeItem{Wrote an 8-page paper and gave multiple presentations on-campus}
-    %     \resumeItem{Presented virtually to the World Conference on Computational Intelligence}
-    %   \resumeItemListEnd
 
   \resumeSubHeadingListEnd
 
@@ -192,7 +168,7 @@
             \resumeItem{Implemented Folium for interactive map visualization.}
             \resumeItem{Enables users to track phone number locations effectively.}
 
-     \textbf{\href{https://drive.google.com/drive/u/1/home}{\textbf{video.link/avi}}} {$|$} {\href{https://github.com/aviAVIRAL/MY_WORK/tree/main/1.%20PROJECTS/Project%201%20TRACK%20PHONE%20NUMBER}{\textbf{github.come/avi}}}\\
+     \textbf{\href{https://drive.google.com/drive/u/1/home}{\textbf{video.link/avi}}} {$|$} {\href{https://github.com/aviAVIRAL/MY_WORK/tree/main/1.%20PROJECTS/Project%201%20TRACK%20PHONE%20NUMBER}{\textbf{github.com/avi}}}\\
             
           \resumeItemListEnd
       \resumeProjectHeading
@@ -202,19 +178,9 @@
             \resumeItem{Employed deep learning, pandas, and scikit-learn with the MovieLens dataset.}
             \resumeItem{Analyzed user preferences and historical data to suggest personalized movie recommendations}
 
-             \textbf{\href{https://drive.google.com/drive/u/1/home}{\textbf{video.link/avi}}} {$|$} {\href{https://github.com/aviAVIRAL/MY_WORK/tree/main/1.%20PROJECTS/Project%201%20TRACK%20PHONE%20NUMBER}{\textbf{github.come/avi}}}\\
+             \textbf{\href{https://drive.google.com/drive/u/1/home}{\textbf{video.link/avi}}} {$|$} {\href{https://github.com/aviAVIRAL/MY_WORK/tree/main/1.%20PROJECTS/Project%201%20TRACK%20PHONE%20NUMBER}{\textbf{github.com/avi}}}\\
             
           \resumeItemListEnd
-
-
-      % \resumeProjectHeading
-      %     {\textbf{Movie recommendation system} $|$ \emph{Python, Deep Learning, Pandas, scikit-learn}}{May 2023 -- May 2023}
-      %     \resumeItemListStart
-      %       \resumeItem{Developed a personalized movie recommendation system using Python.}
-      %       \resumeItem{Employed deep learning, pandas, and scikit-learn with the MovieLens dataset.}
-      %       \resumeItem{Analyzed user preferences and historical data to suggest personalized movie recommendations}
-            
-      %     \resumeItemListEnd
 
 
 
@@ -225,19 +191,18 @@
 
 
 %
-%-----------PROGRAMMING SKILLS-----------
+%-----------Technical Skills-----------
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
      \textbf{Languages}{: Python, C, C++, Go} \\
      \textbf{Frameworks}{: React.js} \\
-     \textbf{Tools & Environment}{: Visual Studio Code, PyCharm, Git} \\
+     \textbf{Development Environment}{: Visual Studio Code, PyCharm, Git} \\
      \textbf{Web Technologies}{: HTML, CSS} \\
      \textbf{Database}{: SQL} \\
      \textbf{Libraries}{: Folium, geocoder, pandas, NumPy etc.} \\
     
-     % \textbf{Database}{: SQL} \\
-     % \textbf{Libraries}{: Folium, geocoder, pandas, NumPy etc.} \\
+     
     
     }}
  \end{itemize}
@@ -251,24 +216,19 @@
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
      
-     \textbf{Chess Rating}{: Global rating Blitz 776 $|$ 3814+ games play $|$} {\href{https://www.chess.com/stats/overview/aviralsharmaknp/0?}{\textbf{chess.come/avi}}}\\
+     \textbf{Chess Rating}{: Global rating Blitz 776 $|$ 3814+ games play $|$} {\href{https://www.chess.com/stats/overview/aviralsharmaknp/0?}{\textbf{chess.com/avi}}}\\
      \textbf{Football}{: Play regional level football as left winger} 
      
-     \textbf{TCS code vita}{: TCS code-vita global rank 5430 $|$ INDIA rank under 2k/20k $|$} {\href{https://drive.google.com/file/d/11AlrrltA985cYADN4LY8U_vni2o0B9Ll/view?usp=drive_link}{\textbf{drive.come/avi}}}\\
+     \textbf{TCS CodeVita}{: TCS CodeVita global rank 5430 $|$ India rank within 2k/20k $|$} {\href{https://drive.google.com/file/d/11AlrrltA985cYADN4LY8U_vni2o0B9Ll/view?usp=drive_link}{\textbf{drive.come/avi}}}\\
      
      
-     \textbf{DSA}{: 250 + Quality quetions solved in different platforms $|$} {\href{https://leetcode.com/aviralsharmaknp/}{\textbf{leedcode.come/avi}}}\\
+     \textbf{DSA}{: 250 + Quality questions solved in different platforms $|$} {\href{https://leetcode.com/aviralsharmaknp/}{\textbf{leetcode.com/avi}}}\\
      
      
      
      
   
     
-     % \textbf{DSA}{:  250 + Quality quetions solved in different platforms $|$} {\href{https://leetcode.com/aviralsharmaknp/}{leedcode.come/avi}}\\
-    
-     % \textbf{DSA}{:  250 + Quality quetions solved in different platforms $|$} {\href{https://leetcode.com/aviralsharmaknp/}{leedcode.come/avi}}\\
-    
-     % \textbf{DSA}{:  250 + Quality quetions solved in different platforms $|$} {\href{https://leetcode.com/aviralsharmaknp/}{leedcode.come/avi}}\\
 
      
     }}
@@ -281,3 +241,7 @@
 
 %-------------------------------------------
 \end{document}
+
+
+
+
