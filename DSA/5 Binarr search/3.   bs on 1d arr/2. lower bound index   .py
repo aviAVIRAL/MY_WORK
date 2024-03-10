@@ -40,14 +40,15 @@ if __name__ == "__main__":
 
 def lowerBound(arr ,x ) -> int:
     n = len(arr)
-    low = 0
-    high = n - 1
+    low = 0    # low, high = 0, n - 1
+    high = n - 1   
+
     ans = n
 
     while low <= high:
         mid = (low + high) // 2
         # maybe an answer
-        if arr[mid] >= x:
+        if arr[mid] >= x:  # if x  <= arr[mid] :
             ans = mid
             # look for smaller index on the left
             high = mid - 1
@@ -122,24 +123,24 @@ if __name__ == "__main__":
 
 
 # .................... CONCEPT ..............
-    # u can modify the op if x not in arr  : acc 2 que
+    #  x not found in arr , by defalut value is len(arr)
 import bisect
 
 def f(arr, x):
 
-    lb= bisect.bisect_left(arr, x)
-    ub= bisect.bisect_right(arr, x)
+    lb = bisect.bisect_left(arr, x)
+    ub = bisect.bisect_right(arr, x)
     return lb , ub 
 
 if __name__ == "__main__":
     arr = [0, 1, 2, 8,8,8, 14, 21,22]  # 9 len of arr
     x = 11111118  
     print(f(arr, x))
-    # op  -1 -1 
+    # op  9 , 9 
 
 print()
-
-
+# .................... CONCEPT ..........
+   # u can modify the op if x not found in arr  : acc 2 que need
 import bisect 
 
 def f(arr, x):

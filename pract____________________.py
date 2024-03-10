@@ -3,26 +3,18 @@
 
 
 
+arr = [ 6,2,8,4,3,1]
 
-arr= [1,2,1,4,5]
-n = len(arr)
-cnt = 0 
+arr.sort()
+print(arr) 
 
-mini1= float("inf")
-mini2= float("inf")
+print()
+print()
 
-for i in range(n):
-    if arr[i] < mini1:
-        mini1 = arr[i]
-for i in range(n):
-    if arr[i] <= mini1 or arr[i] < mini2 :
-        mini2 = arr[i]
+arr = [ 6,2,8,4,3,1]
 
-print(mini1) 
-print(mini2) 
-
-
-
+arr.sort(reverse = True)
+print(arr) 
 
 
 

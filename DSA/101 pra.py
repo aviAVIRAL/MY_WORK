@@ -1,58 +1,35 @@
+def max_hamburgers(recipe, nb, ns, nc, pb, ps, pc, r):
+    # Count the number of each ingredient needed
+    bread_count = recipe.count('B')
+    sausage_count = recipe.count('S')
+    cheese_count = recipe.count('C')
+    
+    # Initialize the maximum number of hamburgers
+    max_hamburgers = 0
+    
+    # Binary search to find the maximum number of hamburgers Polycarpus can make
+    low = 0
+    high = 10**12  # Maximum number of hamburgers possible
+    while low <= high:
+        mid = (low + high) // 2
+        # Calculate the cost of ingredients for mid hamburgers
+        cost = max(0, bread_count * mid - nb) * pb + max(0, sausage_count * mid - ns) * ps + max(0, cheese_count * mid - nc) * pc
+        if cost <= r:
+            max_hamburgers = mid
+            low = mid + 1
+        else:
+            high = mid - 1
+    
+    return max_hamburgers
 
+# Read input
+recipe = input().strip()
+nb, ns, nc = map(int, input().split())
+pb, ps, pc = map(int, input().split())
+r = int(input())
 
-def f(a, k):
-    n = len(a)
-    t = []
-    for i in range(n-k, n):
-        t.append(a[i])
-
-    for i in range(n-k):
-        t.append(a[i])
-    return t
-if __name__=="__main__":
-    a = [1,2,3,4,10,20]
-    s = f(a, 2)
-    for x in s:
-        print(x, end=" ")
-    print()
-
-
-print()
-
-
-def f(a):
-    n = len(a)
-    # t = []
-    s = 0 
-    for i in range(1,n):
-        s = max(s, abs(a[i] - a[i-1]))
-    return s
-if __name__=="__main__":
-    a = [1,2,3,4,23, 999]
-    # s = f(a)
-    # for x in s:
-    #     print(x, end=" ")
-    # print()
-    print(f(a))
-
-print()
-
-
-
-# or example:
-# Suppose n1=11 and n2=15.
-# There is the number 11, which has repeated digits, but 12, 13, 14 and 15 have no repeated digits. So, the output is 4.
-# Case 1:
-# Input:
-# 11 — Vlaue of n1
-# 15 — value of n2
-
-
-
-
-
-
-
+# Print the maximum number of hamburgers Polycarpus can make
+print(max_hamburgers(recipe, nb, ns, nc, pb, ps, pc, r))
 
 
 

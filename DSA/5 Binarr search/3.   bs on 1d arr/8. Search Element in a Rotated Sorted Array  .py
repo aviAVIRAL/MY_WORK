@@ -31,7 +31,7 @@ if __name__ == "__main__":
     else:
         print("The index is:", ans)
 
-# optimal 
+# Optimal (Using Binary Search):  O(logN)   sc 1
 
 def search(arr, n, k):
     low = 0
