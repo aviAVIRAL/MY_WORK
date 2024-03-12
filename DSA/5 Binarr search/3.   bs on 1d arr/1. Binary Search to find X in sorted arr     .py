@@ -95,3 +95,8 @@ if __name__ == "__main__":
         print("The target is not present.")
     else:
         print("The target is at index:", ind) 
+
+
+
+
+

@@ -24,7 +24,7 @@ def findFloor(arr, n, x):
     while low <= high:
         mid = (low + high) // 2
         # maybe an answer
-        if arr[mid] <= x:
+        if arr[mid] <= x:  # imp
             ans = arr[mid]
             # look for smaller index on the left
             low = mid + 1
@@ -34,7 +34,7 @@ def findFloor(arr, n, x):
     return ans
 
 
-def findCeil(arr, n, x):  # ceil : lower bound  >= 
+def findCeil(arr, n, x):  # ceil : lower bound 
     low = 0
     high = n - 1
     ans = -1   
@@ -67,10 +67,11 @@ print("The floor and ceil are:", ans[0], ans[1])
 
 # Output: The floor and ceil are: 4 7
 
-# Time Complexity: O(logN), where N = size of the given array.
-# Reason: We are basically using the Binary Search algorithm.
+# tc  log n   sc 1 
 
-# Space Complexity: O(1) as we are using no extra space.
+# using bisect ho jaye ga easily toda dimagn lage ke 
+
+
 
 
 

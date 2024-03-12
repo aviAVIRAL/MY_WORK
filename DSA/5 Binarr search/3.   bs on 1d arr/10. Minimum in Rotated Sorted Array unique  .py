@@ -1,4 +1,4 @@
-# Minimum in Rotated Sorted Array
+# Minimum in Rotated Sorted Array { unique elm }
 # Problem Statement: Given an integer array arr of size N, sorted in ascending order (with distinct values). Now the array is rotated between 1 to N times which is unknown. Find the minimum element in the array. 
 
 # Pre-requisites: Search in Rotated Sorted Array I,  Search in Rotated Sorted Array II & Binary Search algorithm
@@ -19,11 +19,10 @@
 
 # optimal using binary search   tc logN   sc 1 
 
-import sys
-def findMin(arr: [int]):
+def findMin(arr):
     low = 0
     high = len(arr) - 1
-    ans = sys.maxsize
+    ans = float("inf")
 
     while low <= high:
         mid = (low + high) // 2
@@ -43,7 +42,7 @@ if __name__ == "__main__":
     ans = findMin(arr)
     print("The minimum element is:", ans)
 
-# for dub
+
 
 
 

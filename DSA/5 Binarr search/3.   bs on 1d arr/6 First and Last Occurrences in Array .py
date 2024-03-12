@@ -16,41 +16,34 @@
 # Result: -1 -1
 # Explanation: The target value is not present in the array. So, we have returned -1 as the indices of the first and the last occurrence.
 
-
-
-
 # brute  by avi    tc 2n    sc 1
 def f(a, t):    
     n = len(a)
     f = -1 
     la = -1
-
     for i in range(n):
         if a[i] == t:
             f = i
             la = i
             break 
-
     for j in range(n):
         if a[j] == t:
             la = j
-
     return f, la
-
 if __name__=="__main__":
     arr = [2,4,6,8,8,8,11,13]
     t = 8 
     print(f(arr, t))
-            
+
 # brute by striver  tc  n    sc 1 
 
-def firstAndLastPosition(arr,  k):
+def firstAndLastPosition(arr,  x):
     
     first = -1
     last = -1
 
     for i in range(len(arr)):
-        if arr[i] == k:
+        if arr[i] == x:
             if first == -1:    # imp 
                 first = i
             last = i   # last ko to update kr na hee kr na hai else mat likiyo 
@@ -135,8 +128,26 @@ if __name__ == "__main__":
     k = 8
     ans = f(arr,k)
     print("The first and last positions are:", ans[0], ans[1])
+# .........................
+    # rep 
+import bisect
 
+def f(ARR, x):
+    if x not in ARR:
+        return (-1, -1)
 
+    lb = bisect.bisect_left(ARR, x)
+    ub = bisect.bisect_right(ARR, x) - 1
+    return lb , ub 
+if __name__ == "__main__":
+    arr = [2, 4, 6, 8, 8, 8, 11, 13]
+    n = 8
+    k = 8
+    ans = f(arr,k)
+    print("The first and last positions are:", ans[0], ans[1])
+    # ...................................
+
+    
 # full binary search from scrach tc same as optimal 
 
 def firstOccurrence(arr, n, k):

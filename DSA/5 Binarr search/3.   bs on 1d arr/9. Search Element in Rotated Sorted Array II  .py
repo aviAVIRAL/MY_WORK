@@ -14,13 +14,25 @@
 # Result: False
 # Explanation: The element 10 is not present in the array. So, the answer is False.
 
-# brute 
+# brute o(N)
 # simple linear search 
+def searchInARotatedSortedArrayII(arr , k ) -> bool:
+    for num in arr:
+        if num == k:
+            return True
+    return False
+if __name__ == "__main__":
+    arr = [7, 8, 1, 2, 3, 3, 3, 4, 5, 6]
+    k = 3
+    ans = searchInARotatedSortedArrayII(arr, k)
+    if not ans:
+        print("Target is not present.")
+    else:
+        print("Target is present in the array.")
 
-# Optimal (Using Binary Search): tc : O(logN)  
 
-from typing import *
-def searchInARotatedSortedArrayII(arr : List[int], k : int) -> bool:
+# Optimal (Using Binary Search):  tc : O(logN)  
+def searchInARotatedSortedArrayII(arr , k) -> bool:
     n = len(arr)  # size of the array
     low, high = 0, n - 1
 
@@ -63,6 +75,15 @@ if __name__ == "__main__":
         print("Target is not present.")
     else:
         print("Target is present in the array.")
+
+
+# complexity Analysis
+# Time Complexity: O(logN) for the best and average case. O(N/2) {jab to much dublicate} for the worst case. Here, N = size of the given array.
+# Reason: In the best and average scenarios, the binary search algorithm is primarily utilized and hence the time complexity is O(logN). However, in the worst-case scenario, where all array elements are the same but not the target (e.g., given array = {3, 3, 3, 3, 3, 3, 3}), we continue to reduce the search space by adjusting the low and high pointers until they intersect. This worst-case situation incurs a time complexity of O(N/2).
+
+# Space Complexity: O(1)
+# Reason: We have not used any extra data structures, this makes space complexity, even in the worst case as O(1).
+
 
 
 
