@@ -1,4 +1,4 @@
-# Find out how many times the array has been rotated
+# Find out how many times the array has been rotated { unique elm }
 # Problem Statement: Given an integer array arr of size N, sorted in ascending order (with distinct values). Now the array is rotated between 1 to N times which is unknown. Find how many times the array has been rotated. 
 
 # Pre-requisites: Find minimum in Rotated Sorted Array,  Search in Rotated Sorted Array II & Binary Search algorithm
@@ -33,57 +33,37 @@ if __name__ == "__main__":
     print("The array is rotated", ans, "times.")
 
 # optimal  tc : O(logN)
-def findKRotation(arr : [int]) -> int:
+
+def findMinIndex(arr):
     low = 0
     high = len(arr) - 1
-    ans = float('inf')
-    index = -1
+    ans = float("inf")
+    inx = -1
+
     while low <= high:
         mid = (low + high) // 2
 
-        # If search space is already sorted,
-        # then arr[low] will always be
-        # the minimum in that search space
-        if arr[low] <= arr[high]:
+        if arr[low] <= arr[mid]:  # if left part is sorted
             if arr[low] < ans:
-                index = low
                 ans = arr[low]
-            break
-
-        # If left part is sorted
-        if arr[low] <= arr[mid]:
-            # Keep the minimum
-            if arr[low] < ans:
-                index = low
-                ans = arr[low]
-
-            # Eliminate left half
-            low = mid + 1
-        else:  # If right part is sorted
-            # Keep the minimum
+                inx = low
+            low = mid + 1  # eliminate left half
+            
+        else:  # if right part is sorted
             if arr[mid] < ans:
-                index = mid
                 ans = arr[mid]
+                inx = mid
+            high = mid - 1  # eliminate right half
 
-            # Eliminate right half
-            high = mid - 1
-
-    return index
+    return inx 
 
 if __name__ == "__main__":
-    arr = [4, 5, 6, 7, 0, 1, 2, 3]
-    ans = findKRotation(arr)
-    print("The array is rotated", ans, "times.")
-
-
-
-
-
-
-
-
-
-
+    arr = [4,5,6,7,8,9,   1, 2, 3]
+    inx = findMinIndex(arr)
+    if inx == -1:
+        print("No minimum element found.")
+    else:
+        print("The index of the minimum element is:", inx)
 
 
 

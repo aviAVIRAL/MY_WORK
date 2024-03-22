@@ -1,32 +1,56 @@
 
 
-print()
-print()
-print()
 
-numbers = [1, 2, 3, 4, 5]
+import math
 
-for num in numbers:
-    if num % 2 == 0:
-        continue
-    print(num)
+def  pos(arr,div,t):
+    tot = 0 
+    for i in range(len(arr)):
+        tot += math.ceil(arr[i]/div)
+    if tot <= t:
+        return True 
+    else : 
+        return False 
 
+def f(arr,t):
+    for i in range(min(arr), max(arr)+1):
+        if  ( pos(arr,i,t) == True ):
+            return i 
+    return -1 
 
-print("...................")
+if __name__=="__main__":
+    arr = [1,2,5,9]
+    t = 6 
+    print(f(arr,t))
 
-numbers = [1, 2, 3, 4, 5]
-
-index = 0
-
-while index < len(numbers):
-    num = numbers[index]
-    if num % 2 == 0:
-        index += 1
-        continue
+# by avi ..........
     
-    print(num)
-    
-    index += 1
+import math
 
+def  pos(arr,div,t):
+    tot = 0 
+    for i in range(len(arr)):
+        tot += math.ceil(arr[i]/div)
+    if tot <= t:
+        return True 
+    else : 
+        return False 
 
-print("...................")
+def f(arr,t):
+    l = min(arr)
+    h = max(arr)
+    while l<=h:
+        m = (l+h)//2
+
+        if  (   pos(arr,m,t)  ):
+            h = m - 1
+        else:
+            l = m + 1
+        
+        return m 
+    return -1 
+
+if __name__=="__main__":
+    arr = [1,2,5,9]
+    t = 6 
+    print(f(arr,t))

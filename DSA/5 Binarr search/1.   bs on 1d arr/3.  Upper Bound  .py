@@ -69,6 +69,35 @@ if __name__ == "__main__":
     ind = upperBound(arr, x)
     print("The upper bound is the index:", ind)
 
+# .............repr  remove ans directly us return low ya  high
+
+def upperBound(arr, x) :
+    n = len(arr)
+    low = 0
+    high = n - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+        # maybe an answer
+        if arr[mid] > x:
+            # look for smaller index on the left
+            high = mid - 1
+        else:
+            low = mid + 1  # look on the right
+
+    return low
+
+if __name__ == "__main__":
+    arr = [3, 5, 8, 9, 15, 19]
+    x = 9
+    ind = upperBound(arr, x)
+    print("The upper bound is the index:", ind)
+    
+if __name__ == "__main__":
+    arr = [3, 5, 8, 15,15,15, 19]
+    x = 9  # op The lower bound is the index: 3
+    ind = upperBound(arr, x)
+    print("The upper bound is the index:", ind)
 
 
 # bisect_right ( )    

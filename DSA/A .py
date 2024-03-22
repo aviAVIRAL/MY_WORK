@@ -1,45 +1,79 @@
 
 
 
-def search(arr, n, k):
-    low = 0
-    high = n - 1
-    while low <= high:
-        mid = (low + high) // 2
+# brute 
 
-        # if mid points the target
-        if arr[mid] == k:
-            return mid
+from typing import List
 
-        # if left part is sorted
-        if arr[low] <= arr[mid]:
-            if arr[low] <= k and k <= arr[mid]:
-                # element exists
-                high = mid - 1
-            else:
-                # element does not exist
-                low = mid + 1
-        else:  # if right part is sorted
-            if arr[mid] <= k and k <= arr[high]:
-                # element exists
-                low = mid + 1
-            else:
-                # element does not exist
-                high = mid - 1
+def findDays(weights: List[int], cap: int) -> int:
+    days = 1  # First day
+    load = 0
+    n = len(weights)  # size of array
+
+    for i in range(n):
+        if load + weights[i] > cap:
+            days += 1  # move to next day
+            load = weights[i]  # load the weight
+        else:
+            # load the weight on the same day
+            load += weights[i]
+    
+    return days
+
+def leastWeightCapacity(weights: List[int], d: int) -> int:
+    # Find the maximum and the summation
+    maxi = max(weights)
+    summation = sum(weights)
+
+    for i in range(maxi, summation + 1):
+        if findDays(weights, i) <= d:
+            return i
+
+    # dummy return statement
     return -1
 
-
-if __name__ == "__main__":
-    arr = [ 7, 15, 10, 100, 9, 101,   19, 1,  9,  2, 3,  4, 8, 6]
-          # 0  1   2   3    4   5     6   7   8   9  10        13 
-    n = len(arr)
-
-    ans = search(arr, n, 6 )
-    if ans == -1:
-        print("Target is not present.")
-    else:
-        print("The index is:", ans)
-
+weights = [5, 4, 5, 2, 3, 4, 5, 6]
+d = 5
+ans = leastWeightCapacity(weights, d)
+print("The minimum capacity should be:", ans)
 
 print()
+# rep also as
+def fun(weights, cap, d) -> int:
+    days = 1  # First day
+    load = 0
+    n = len(weights)  # size of array
+
+    for i in range(n):
+        if load + weights[i] > cap:
+            days += 1  # move to next day
+            load = weights[i]  # load the weight
+        else:
+            # load the weight on the same day
+            load += weights[i]
+
+    if days <= d:return True
+    else : return False
+
+def f(weights, d) -> int:
+    # Find the maximum and the summation
+    maxi = max(weights)
+    summation = sum(weights)
+
+    for i in range(maxi, summation + 1):
+        if fun(weights, i, d) :
+            return i
+
+    # dummy return statement
+    return -1
+
+weights = [5, 4, 5, 2, 3, 4, 5, 6]
+d = 5
+ans = f(weights, d)
+print("The minimum capacity should be:", ans)
+
+
+
+
+
 

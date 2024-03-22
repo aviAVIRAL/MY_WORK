@@ -20,7 +20,6 @@
 #  just return unique elm  
 # ...........................
 
-
 # my  bhai aapne app kiya hai  brute 
 def f(arr,n):
     if arr[n-1] != arr[n-2]: # edge case
