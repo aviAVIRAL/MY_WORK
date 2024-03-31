@@ -1,56 +1,37 @@
 
 
 
-import math
 
-def  pos(arr,div,t):
-    tot = 0 
-    for i in range(len(arr)):
-        tot += math.ceil(arr[i]/div)
-    if tot <= t:
-        return True 
-    else : 
-        return False 
 
-def f(arr,t):
-    for i in range(min(arr), max(arr)+1):
-        if  ( pos(arr,i,t) == True ):
-            return i 
-    return -1 
 
-if __name__=="__main__":
-    arr = [1,2,5,9]
-    t = 6 
-    print(f(arr,t))
 
-# by avi ..........
-    
-import math
+# Function to find the maximum height of the mountains
+def f(arr):
+    max_height = 0
+    for height in arr:
+        if height > max_height:
+            max_height = height
+    return max_height
 
-def  pos(arr,div,t):
-    tot = 0 
-    for i in range(len(arr)):
-        tot += math.ceil(arr[i]/div)
-    if tot <= t:
-        return True 
-    else : 
-        return False 
 
-def f(arr,t):
-    l = min(arr)
-    h = max(arr)
-    while l<=h:
-        m = (l+h)//2
+if __name__ == "__main__":
+    # Input number of test cases
+    T = int(input())
 
-        if  (   pos(arr,m,t)  ):
-            h = m - 1
-        else:
-            l = m + 1
-        
-        return m 
-    return -1 
+    # Iterate over each test case
+    for _ in range(T):
+        # Input number of mountains and their heights
+        N = int(input())
+        arr = list(map(int, input().split()))
 
-if __name__=="__main__":
-    arr = [1,2,5,9]
-    t = 6 
-    print(f(arr,t))
+        # Find the maximum height and print it
+        print(f(arr))
+
+
+# 3
+# 5
+# 1 2 3 4 5
+# 4
+# 1 2 3 4
+# 2
+# 12 10

@@ -1,14 +1,33 @@
+print()
 
 
-integer = 123434535
+elm = [9, 41]
+ans = list(map(str, elm))
+print(ans)  # Output: ["9", "41"]
 
-s  = str(integer)
-# s ~ string  
-
-for i in range(1, len(s)-1):
-    if s[i] != "3" :
-        print(s[i])
+elm = ["9", "41"]
+ans = list(map(int, elm))
+print(ans)  # Output: ["9", "41"]
 
 
 print()
 
+
+nums = [9, 41] 
+strings = [str(x) for x in nums]
+print(strings)  # Output: ["9", "41"]
+
+
+nums = ["9", "41"] 
+strings = [int(x) for x in nums]
+print(strings)  # Output: [9, 41]
+
+
+
+
+
+
+
+
+
+print()                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          

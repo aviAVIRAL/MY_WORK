@@ -1,79 +1,108 @@
 
 
+print()
 
-# brute 
-
-from typing import List
-
-def findDays(weights: List[int], cap: int) -> int:
-    days = 1  # First day
-    load = 0
-    n = len(weights)  # size of array
-
-    for i in range(n):
-        if load + weights[i] > cap:
-            days += 1  # move to next day
-            load = weights[i]  # load the weight
-        else:
-            # load the weight on the same day
-            load += weights[i]
-    
-    return days
-
-def leastWeightCapacity(weights: List[int], d: int) -> int:
-    # Find the maximum and the summation
-    maxi = max(weights)
-    summation = sum(weights)
-
-    for i in range(maxi, summation + 1):
-        if findDays(weights, i) <= d:
-            return i
-
-    # dummy return statement
-    return -1
-
-weights = [5, 4, 5, 2, 3, 4, 5, 6]
-d = 5
-ans = leastWeightCapacity(weights, d)
-print("The minimum capacity should be:", ans)
+def f(x) :
+    nu = str(x)
+    su = sum(int(y) for y in nu )
+    if x % su == 0:
+        return su 
+    else :
+        return -1 
+print(f(18))
 
 print()
-# rep also as
-def fun(weights, cap, d) -> int:
-    days = 1  # First day
-    load = 0
-    n = len(weights)  # size of array
 
-    for i in range(n):
-        if load + weights[i] > cap:
-            days += 1  # move to next day
-            load = weights[i]  # load the weight
-        else:
-            # load the weight on the same day
-            load += weights[i]
 
-    if days <= d:return True
-    else : return False
+def f(x) :
+    nu = str(x)
 
-def f(weights, d) -> int:
-    # Find the maximum and the summation
-    maxi = max(weights)
-    summation = sum(weights)
-
-    for i in range(maxi, summation + 1):
-        if fun(weights, i, d) :
-            return i
-
-    # dummy return statement
+    if x % sum(map(int, str(x))) == 0:
+        return sum(map(int, str(x)))
     return -1
 
-weights = [5, 4, 5, 2, 3, 4, 5, 6]
-d = 5
-ans = f(weights, d)
-print("The minimum capacity should be:", ans)
 
 
 
 
 
+
+
+
+print()
+
+
+# print()
+# x = 123 
+# nu = str(x)
+# su = (int(y) for y in nu)
+# print(su)
+
+# print()
+
+# arr = [1,2]
+# ans = sum(arr)
+# print(ans)
+# print()
+
+# sol = sum([1,2])
+# print(sol)
+
+
+print()
+# # test case
+# # 5 3
+# # 7 3 5 2 1
+
+# def f(arr, target):
+#     n = len(arr)
+#     for i in range(n):
+#         if arr[i] == target:
+#             return "yes"
+#     return "no"  # Element not found
+
+# if __name__ == "__main__":
+#     N, X = map(int, input().split())
+#     Arr = list(map(int, input().split()))
+
+#     ans = f(Arr, X)
+#     print(ans)
+print("................")
+
+ans =sum( list(map(int, [1,2,3] ))  )
+print(ans)
+
+
+ans = [map(int, ["1","2","3"] )]
+print(ans)
+
+ans = map(int, ["1","2","3"] )
+print(ans)
+
+print(".........")
+ans =sum( list(map(int, "123" ))  )
+print(ans)
+
+ans =sum( list(map(int,  ["1","2","3"] ))  )
+print(ans)
+ans =sum( list(map(int, [1,2,3] ))  )
+print(ans)
+
+print(".........")
+ans = list(map(int, "123" ))
+print(ans)
+
+ans = list(map(int,  ["1","2","3"] ))
+print(ans)
+ans = list(map(int, [1,2,3] ))
+print(ans)
+
+print(".........")
+ans = list(map(str, [1,2,3]  ))
+print(ans)
+
+ans = list(map(int,  ["1","2","3"] ))
+print(ans)
+ans = str(map(int, [1,2,3] ))
+print(ans)
 
