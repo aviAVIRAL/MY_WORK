@@ -4,6 +4,33 @@
 # op 2 
 # .............
 
+         
+# ...............................................
+            # bhai aapne aap kiya its work 
+
+#   brute   hai but optimal way mein   I code it by myself 
+
+
+def f(a):
+    n = len(a)
+    for i in range(n):
+        cnt = 0
+        for j in range(n):
+            if a[i] == a[j]:
+                cnt += 1 
+            if cnt > 1:
+                break 
+        if cnt == 1 :
+            break 
+    return a[i] 
+
+if __name__=="__main__":
+    arr = [ 1,2, 4 ,1,2]  # 4 op 
+    print(f(arr))
+     
+
+# ................................................
+
 # 1. brute approach  #  tc = o(n^2)
 
 #  code will run but error :- TLE   time limitation exceeded   error showing when submite
@@ -43,7 +70,7 @@ print(ans)
 # 2. better 
 
 # code will run but not able to pass the hidden test case in leed code 
-# hasing use 
+#  ( hasing | hashFrequency ) use 
 
 
 def onces(arr): 

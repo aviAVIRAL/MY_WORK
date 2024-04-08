@@ -4,18 +4,18 @@
 
 
 def intersection_withoutdublicate(a, b):
-    c = []
+    temp = []
     vist =[0]*len(b)
 
     for i in range(len(a)):
         for j in range(len(b)):
             if a[i] == b[j] and vist[j] == 0 :
-                c.append(b[j])
+                temp.append(b[j])
                 vist[j] = 1 
                 break
             if a[i] < b[j] :
                 break
-    return c
+    return temp
 
 a = [1,2,2,3,3,4,6,7]
 b = [2,3,3,5,6,7,8]

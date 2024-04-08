@@ -181,3 +181,29 @@ print(ans)
 
 
 
+# hash map
+
+
+def f(a, b):
+    mp = {}
+    for x in a:
+        if x not in mp:
+            mp[x] = 1 
+        else:
+            mp[x] += 1 
+    
+    for x in b:
+        if x not in mp:
+            mp[x] = 1 
+        else:
+            mp[x] += 1 
+    
+    return mp 
+
+if __name__=="__main__":
+    a = [1,1,2,3,4,5]
+    b = [2,3,4,4,5,6] # op 1 2 3 4 5 6
+    k = f(a,b)
+    for x in k:
+        print(x, end= " ")
+    print()

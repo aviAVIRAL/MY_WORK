@@ -6,7 +6,9 @@
 # but   [2 + 3 + 5] longest hai  length is 3 
 # output : 3 
 
-# brute 
+# ...................................
+
+# brute  - 1     tc n^3  sc 1 
 
 def f(arr , k ): 
     n = len(arr)
@@ -27,24 +29,19 @@ def f(arr , k ):
 if __name__ == "__main__":
     arr = [2, 3, 5, 1, 9]
     k = 10
-
     print(f(arr , k ))
 
 
-
-# better  : 
-    
+# brute - 2   :    tc n^2    sc 1 
     
 def f(arr , k ): 
     n = len(arr)
-    
     length = 0
 
     for i in range(n):
         s = 0 
         for j in range(i, n):
             s += arr[j]
-
             if s == k:
                 length = max ( length ,  j+1  -i )
 
@@ -60,7 +57,7 @@ if __name__ == "__main__":
     # two optimal sol  : for + all edge case and for only + & 0 
 # ........................................
 
-# optimal 1  : + , 0 , -    for all edge cases 
+# better 1  : + , 0 , -    for all edge cases 
     
     # tc = 0(n)^2  sc = 0(n)
 
@@ -87,7 +84,10 @@ if __name__ == "__main__":
     length = f(arr, k)
     print(f"The length of the longest subarray is: {length}")
 
-# optimal 2  for + and zeroes only 
+# ..........................      .................
+# ..........................      .................
+
+# optimal 2  for   +ve  and zero's    elm only 
     # tc = 0(2n)  *tc :::::  sc = 0(1)
 
 # r1
@@ -148,9 +148,57 @@ def f(a, k):
             j += 1
         
     return maxLen
-
 if __name__ == "__main__":
     a = [2, 3, 5, 1, 9]
     k = 10
     length = f(a, k)
     print(f"The length of the longest subarray is: {length}")
+
+
+# ...................,,,,,,,,,,,,,,,,,....
+# ,,,,,,,,,,,,,,,,,,,,,,..................
+
+# kadan se ho geya    optimal only for positive +ve only 
+
+# tc n   sc 1 
+def f(arr, k):
+    maxilen = -float("inf")
+    sum = 0 
+    ansStart, ansEnd = -1 , -1 
+
+    for i in range(len(arr)): 
+        if sum == 0 :
+            start = i
+        sum += arr[i]
+        if sum == k:
+            sum = 0 
+            ansStart = start
+            ansEnd = i
+            maxilen = max(maxilen, ansEnd - ansStart + 1)
+        # if sum < 0 : for all +ve, -ve, 0 elm 
+        #     sum = 0  
+    return maxilen  
+         
+if __name__=="__main__":  # yes worjkign for +ve only 
+    arr= [ 2, 3, 5 ,1 ,9 ]
+    k = 10 
+    print(f(arr, k))
+
+
+   
+if __name__=="__main__":
+    arr= [ -1, 1, 1 ]
+    k = 1 
+    print(f(arr, k))  # not working neagtive wale  op is 3 
+                        #  but coming 1 
+
+
+
+
+
+
+
+
+
+
+

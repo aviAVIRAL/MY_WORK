@@ -2,9 +2,22 @@
 #    by use of set data structure  tc = o(nlogn) sc = o(n)
 #    using set data structure : not good for leedcode 
 
+# ...................
+
+def f(arr) : 
+    s = set(arr)
+
+    return s 
+if __name__ == "__main__":
+    arr = [1, 1, 2,  2, 2, 3, 3,4,5,6,7,8]
+    print(f(arr))
+                    # OP   {1, 2, 3}
+# ...................
+
 # Q 1 return "Count" / total number of, unique element 
 def f(arr) : 
     s = set()
+
     n = len(arr)
 
     for i in range(n):
@@ -22,6 +35,32 @@ def f(arr) :
 if __name__ == "__main__":
     arr = [1, 1, 2,  2, 2, 3, 3]
     print(f(arr))
+
+# .trick repre quetion itself demand 
+
+def f(arr) : 
+    s = set()
+    n = len(arr)
+
+    for i in range(n):
+        s.add(arr[i])
+    
+    # k = len(s)
+    j = 0
+    for x in s:
+        arr[j] = x
+        j += 1
+
+    return j  # or return j 
+
+#  j  : 3  
+if __name__ == "__main__":
+    arr = [1, 1, 2,  2, 2, 3, 3]
+    k = f(arr)
+    for i in range(k):  
+        print(arr[i], end = " ")  # op = 1 2 3 
+    print()  
+
 
 # Q 2 return arr of unique elements only 
 def f(arr) : 

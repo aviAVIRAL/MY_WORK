@@ -4,9 +4,9 @@
 #  Output:       1,2,4
 
 
-# mapping methoud 
+# hashMap  methoud 
 
-#  dictionary = dic = mapping = mp  
+#  dictionary = dic = mapping = mp{ }  = HashMap    
 
 def f(arr):
     n = len(arr)
@@ -31,53 +31,38 @@ if __name__=="__main__":
 
 
 
-# sorting methoud  r 1    sc = 0( n )
 
+# optmial { i did it with my own }
 
-def f(arr):
+# tc = nlogn + n 
+#    sorting + linear
+
+# sc = n : i can optimize sc also by using concept also   
+
+print()
+print()
+
+def fu(arr):
+    arr.sort()
+    temp = []
     n = len(arr)
-    arr.sort() 
+# edge case
+    if arr[0] == arr[1]:
+        temp.append(arr[0]) 
 
-    temp = [ ]
-    for i in range(n-1):
-        if arr[i] == arr[i+1] :
-            temp.append(arr[i])
-        else:
-            i+= 1
+    for i in range(1, n- 1):
+        if arr[i] == arr[i-1] or arr[i] == arr[i+1]:
+            if arr[i] != temp[-1]:
+                temp.append(arr[i])
 
-    return temp 
+# edge case
+    if arr[n-2] == arr[n-1]:
+        if arr[n-1] != temp[-1]:
+            temp.append(arr[n-1]) 
+
+    return temp
 
 if __name__=="__main__": 
-    arr = [1,1,2,3,4,4,5,2]
-    print(f(arr))
-
-
-# sorting methoud  r 2     sc = 0(1 )
-
-def f(arr):
-    n = len(arr)
-    arr.sort() 
-    
-    j = 0 
-    for i in range(n-1):
-        if arr[i] == arr[i+1] :
-            arr[j] = arr[i]
-            j +=1 
-        else:
-            i+= 1
-
-    return j 
-
-if __name__=="__main__": 
-    arr = [1,1,2,3,4,4,5,2]
-    k = f(arr)
-
-    for i in range(k ):
-        print( arr[i], end= " ")
-    print 
-    
-    # for x in k :   do not use this loop, reason indexing ko access kr na hai na ki ' eachelement = x '
-    #     print( x , end = " ")
-    # print( ) 
-
+    arr = [1,1,1,1,2,3,3,3,3,4,5,5,5,6,6]
+    print(fu(arr))
 

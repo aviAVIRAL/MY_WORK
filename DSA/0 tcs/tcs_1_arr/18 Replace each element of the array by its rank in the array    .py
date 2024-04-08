@@ -16,6 +16,29 @@
 # Explanation: When sorted,the array is 1,5,8,8,9,15,25. So the rank of 1 is 1,rank of 5 is 2,rank of 8 is 3 and so…
 
 
+# repre
+
+def f(arr):
+
+    mp = {}
+    temp = 1
+    brr = arr.copy()
+    brr.sort()
+
+    for x in brr:
+        if x not in mp:  # Check if key exists in the dictionary
+            mp[x] = temp
+            temp += 1
+
+    var = []
+    for y in arr:
+        var.append(mp[y])
+
+    return var
+
+if __name__=="__main__":
+    arr = [20, 15, 26, 2, 98, 6]
+    print(f(arr))
 
 
 

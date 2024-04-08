@@ -18,12 +18,9 @@
 # Explanation: There are two consecutive 1's in the array.
 
 
-
-
-
 # optimum  tc = o(n)   sc =  o(1)
 
-def findMaxConsecutiveOnes( arr):
+def f( arr):
     count = 0
     maxi  = 0 
 
@@ -41,7 +38,5 @@ def findMaxConsecutiveOnes( arr):
 
 if __name__=="__main__":
     arr = [1,0,1,1,0,1,1,1] 
-    print(findMaxConsecutiveOnes(arr))
-
-
+    print(f(arr))
 

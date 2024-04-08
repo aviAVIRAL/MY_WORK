@@ -1,3 +1,25 @@
+
+
+# brute hai aapne aap kr diya  | tc = 0(n^2) | sc 0(1)
+
+
+def f(a):
+    n = len(a)
+
+    for i in range(n+1): 
+        for j in range(n):
+            if  i ==   a[j] :
+                break
+        if i !=  a[j] :
+            break 
+    return i  
+            
+arr = [0,1, 3,4,5]
+print(f(arr))
+arr = [0,1,2, 3,4,5,6,    8]
+print(f(arr))                             
+
+
 # 1. brute force   tc = o(n*n) ~> n^2    sc = o(1) 
 
 def missing_value(arr):
