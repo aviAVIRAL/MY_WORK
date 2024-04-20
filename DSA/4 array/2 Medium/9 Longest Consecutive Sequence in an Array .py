@@ -157,3 +157,43 @@ if __name__=="__main__":
     a = [100,200,1,2,3,3,101,101,2,3, 4]
     ans = f(a)
     print(ans)
+
+
+
+# ...........100 % correct code...
+# bhai ye aapne  aap kiya hai HashMap  
+
+print()
+
+def f(a):
+    n = len(a) 
+    a.sort()
+    mp = { }
+    for x in a : 
+        if x not in mp : 
+            mp[x] = 1 
+        else : 
+            mp[x] += 1 
+    return mp  
+
+# if --name--  "--mian--":
+a = [100, 200, 1, 2, 3, 4]
+k = f(a) # {1: 1, 2: 1, 3: 1, 4: 1, 100: 1, 200: 1}
+sol = [(key,val) for key, val in k.items()] # [(1, 1), (2, 1), (3, 1), (4, 1), (100, 1), (200, 1)]
+
+temp = [ ]
+for x, y in sol: 
+    temp.append(x)   # [1, 2, 3, 4, 100, 200]
+
+cnt = 1
+maxi = -1 
+for i in range(len(temp)-1):
+    if temp[i] + 1 == temp[i+1]:
+        cnt += 1
+        maxi = max(maxi , cnt )
+    else : 
+        cnt = 1 
+print(maxi) 
+ 
+
+

@@ -1,23 +1,25 @@
 
-
-def f(matrix):
-    n = len(matrix)
-    
-    temp = [[0] * n for _ in range(n)]
-    
-    
-    for i in range(n):
-        for j in range(n):
-            temp[j][n - i - 1] = matrix[i][j]
-    return temp
+k =    [[1, 2, 3, 12], 
+        [4, 5, 6, 12], 
+        [7, 8, 9, 12]]
 
 
-if __name__ == "__main__":
-    mat = [[1, 2, 3], 
-           [4, 5, 6], 
-           [7, 8, 9]]
-    k = f(mat)   
-    for i in range(len(k)):
-        for j in range(len(k[0])):
-            print(k[i][j], end=" ")
-        print()
+for row in k: 
+    for x in row :
+        print(x , end = " ")
+    print()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -23,25 +23,6 @@
 
 
 
-
-
-# concept 
-
-# code to correct hai but according to quetion chalna hai bhaio 
-def f (arr, k):
-
-    for x in arr:          # k = 14  arr=[2,7,40 ]  ya ha 7 two time add ho raha hai ,but according to  quetion 2 elements hai jiska sum == k :
-        for y in arr: 
-            if x + y == k :
-                return True
-    return False 
-
-if __name__=="__main__":
-    arr = [2,7,2]
-    k = 14 
-    print(f(arr, k))
-
-
 # Brute  1   tc = 0(n^2)    sc =  0(1)  
 
 def f (arr, k):
@@ -70,7 +51,7 @@ def f (arr, k):
 
     for i in range(n):
         for j in range( i+1 , n): 
-            if arr[i] +arr[j] == k : 
+            if arr[i] + arr[j] == k : 
                 return i, j 
             
     return -1 
@@ -82,47 +63,47 @@ if __name__=="__main__":
     print(f(arr, k))
         
 
-# better  tc = 0(n)  sc =0(n)
+# better  tc = 0( n * 1 , logn , n )  sc =0(n)
+
+# hash map  
 
 # r1 
 def two_sum(arr, k):
     n = len(arr)
     mp = {}
-
+# rem remainig 
     for i in range(n):
-        ans = k - arr[i]
+        rem = k - arr[i]   
         
-        if ans in mp:
-            return mp[ans], i
+        if rem in mp:
+            return mp[rem], i
         else:
             mp[arr[i]] = i
 
-    return -1
+    return -1,-1 
 
 if __name__ == "__main__":
     arr = [2, 6, 5, 8, 11]
     k = 14
     print(two_sum(arr, k))
 
-
 # r2
-print( )
 
 def f (arr, k):
     n = len(arr)
     mp = {}
 
     for i in range(n):
-        ans = abs(k - arr[i])
+        rem = abs(k - arr[i])
 
-        if ans not in mp: 
+        if rem not in mp: 
             mp[arr[i]] = i 
-        elif ans in mp : 
-            return i , mp[ans] # mp[arr[i]] nhi , mp[ans] hai caerfull  
+        
+        elif rem in mp : 
+            return i , mp[rem] # mp[arr[i]] nhi , mp[ans] hai caerfull  
  # other wise error ki arr[i] abhi tak mp mein hai hee nhi or tum return kr ra hai ho 
 
-    return -1 
-
+    return -1 , -1 
 
 if __name__=="__main__":
     arr = [ 2, 6 ,5,  8  ,11 ]
@@ -130,9 +111,9 @@ if __name__=="__main__":
     print(f(arr, k))
 
 
-
-
 # optimal   tc = 0(n)+0(nlogn) sc = 0(1)
+
+# variety 1 : jab return yes and no 
 
 def two_sum(n, arr, target):
     
@@ -165,5 +146,52 @@ if __name__ == "__main__":
     print("This is the answer for variant 1:", ans)
 
 
+# variety 2 : return index 
 
+# gandi tc and sc aye gi but interviewr jada puche tu can flex it 
+
+# bhai ye purely appne aap kiya hai : ye hee  also indicated by striver 
+
+# main ismein concept is to learn the enumerat()  loop only 
+
+def two_sum(n, arr, target):
+    
+    arr.sort()
+    sol= [(index, value) for index, value in enumerate(arr)]
+   # i, j = 0, n - 1
+    i = 0
+    j = n - 1
+    ans = []
+    while i < j:
+        
+        total = arr[i] + arr[j]
+        
+        if total == target:
+            x , y = arr[i], arr[j]
+            for ind , val in sol : 
+                if x == val :
+                    ans.append(ind)
+                    
+            for index , value in sol : 
+                if y == value :
+                    ans.append(index)
+
+            return ans 
+        
+        elif total < target:
+            i += 1
+        
+        else:
+            j -= 1
+    
+    return -1 , - 1
+
+if __name__ == "__main__":
+    n = 5
+    arr = [2, 6, 5, 8, 11]
+    target = 14
+    ans = two_sum(n, arr, target)
+    print("This is the answer for variant 1:", ans)
+
+ 
 

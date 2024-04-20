@@ -11,36 +11,142 @@
 # Explanation: All permutations of {1,2,3} are {{1,2,3} , {1,3,2}, {2,13} , {2,3,1} , {3,1,2} , {3,2,1}}. So, the next permutation just after {1,3,2} is {2,1,3}.
 
 
-# brute : 
+# brute :  bus oraly bol na hai only 
 
-# better  using liberarys in python :
-
-# concept 
+# better  using liberarys in python 
 
 from itertools import permutations
-arr = [1,3,2 ]
-k = permutations(arr)
-for x in k:
-    print(x, end = "")
-# op (1, 2, 3)(1, 3, 2)(2, 1, 3)(2, 3, 1)(3, 1, 2)(3, 2, 1)
-    
-print()
-print()
+
+arr = [1,3, 2]
+
+arr.sort()
+
+sol = [x for x in permutations(arr)]
+
+target = (1,3,2)
+for i in range(len(sol)):
+    if sol[i] == target:
+        print(sol[i+1])
+
+
+# op ( 2, 1, 3)
+
+# ........jab last elm hai target to return first elm
 
 from itertools import permutations
+arr = [1,3, 2]
+arr.sort()
+sol = [x for x in permutations(arr)]
+target = (3,2,1)
+# edge case 
+if target == sol[len(sol)-1]:
+    print(sol[0])
+
+for i in range(len(sol)-1): # see here 
+    if sol[i] == target:
+        print(sol[i+1])
+
+# op ( 2, 1, 3)
+
+# represenatation 2
+import itertools
 
 arr = [1, 3, 2]
+arr.sort()
+sol = [x for x in itertools.permutations(arr)]
+target = (3, 2, 1)  # ye to tuple hai 
 
-# Get all permutations of the array as a list
-perms = list(permutations(arr))
+if target == sol[-1]:  # Check if the target is the last permutation
+    print(sol[0])  # If so, print the first permutation
 
-# Check if there is a next permutation
-if len(perms) > 1:
-    # Get the next permutation
-    next_perm = perms[1]
+for i in range(len(sol) - 1):
+    if sol[i] == target:
+        print(sol[i + 1])  # Print the next permutation after the target
 
-    # Print the next permutation
-    print(*next_perm)
-else:
-    print("There is no next permutation.")
+# correct represntations is 
+
+print( )
+
+def f(nums):
+    x = tuple(nums) # concept 
+    nums.sort()
+    sol = [x for x in permutations(nums)]
+    n = len(sol)
+    if x == sol[n-1]:
+        return sol[0]
+    for i in range(n - 1):
+        if sol[i] == x :
+            return sol[ i +1 ]
+            
+nums =[1,2,3]
+print(f(nums))
+
+# ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+# optimal 
+
+
+
+from typing import List
+
+def nextGreaterPermutation(A: List[int]) -> List[int]:
+    n = len(A) # size of the array.
+
+    # Step 1: Find the break point:
+    ind = -1 # break point
+    for i in range(n-2, -1, -1):
+        if A[i] < A[i + 1]:
+            # index i is the break point
+            ind = i
+            break
+
+    # If break point does not exist:
+    if ind == -1:
+        # reverse the whole array:
+        A.reverse()
+        return A
+
+    # Step 2: Find the next greater element
+    #         and swap it with arr[ind]:
+    for i in range(n - 1, ind, -1):
+        if A[i] > A[ind]:
+            A[i], A[ind] = A[ind], A[i]
+            break
+
+    # Step 3: reverse the right half:
+    A[ind+1:] = reversed(A[ind+1:])
+
+# or also use  
+# A[:] = A[:ind+1] + A[ind+1:][::-1]
+
+    return A
+
+if __name__ == "__main__":
+    A = [2, 1, 5, 4, 3, 0, 0]
+    ans = nextGreaterPermutation(A)
+
+    print("The next permutation is: [", end="")
+    for it in ans:
+        print(it, end=" ")
+    print("]")
+
+print()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -37,7 +37,7 @@ def f (a):
             if a[j] > a[i] : 
                 leader = False
                 break 
-        if leader:
+        if leader:   # if leader  ==  True  :
             temp.append(a[i])
 
     return temp

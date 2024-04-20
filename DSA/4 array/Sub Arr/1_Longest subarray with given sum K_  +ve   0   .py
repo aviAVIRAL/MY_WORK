@@ -54,8 +54,7 @@ if __name__ == "__main__":
     print(f(arr , k ))
 
 # ........................................
-    # two optimal sol  : for + all edge case and for only + & 0 
-# ........................................
+# ............. H A S  M a p ...........................
 
 # better 1  : + , 0 , -    for all edge cases 
     
@@ -67,15 +66,20 @@ def f(arr, k):
     sum = 0
     MaxiLen = 0
     for i in range(n):
+
         sum += arr[i]
+
         if sum == k:
             MaxiLen = max(MaxiLen, i + 1)
+
         rem = sum - k
         if rem in mp:
             length = i - mp[rem]
             MaxiLen = max(MaxiLen, length)
-        if sum not in mp:
+
+        if sum not in mp:  #edge case for zeros 
             mp[sum] = i
+
     return MaxiLen
 
 if __name__ == "__main__":
@@ -84,14 +88,61 @@ if __name__ == "__main__":
     length = f(arr, k)
     print(f"The length of the longest subarray is: {length}")
 
+if __name__ == "__main__":
+    a = [-1, 1, 1]
+    k = 1
+    length = f(a, k)
+    print(f"The length of the longest subarray is: {length}")
+
 # ..........................      .................
 # ..........................      .................
 
-# optimal 2  for   +ve  and zero's    elm only 
+# optimal 2 { 2 poiner greedy }  for   +ve  and zero's    elm only 
     # tc = 0(2n)  *tc :::::  sc = 0(1)
 
-# r1
+# ye approrach kaam kr be sakti hai or nhi bee 
+
+print()
+
+# represent by avi 
+
+def func(a, k):
+    n = len(a)
+    i = 0
+    j = 0
+    Sum =  0   # a0]
+    maxLen = 0
+    while i < n:
+        Sum += a[i]
+
+        if Sum == k:
+            maxLen = max(maxLen, i - j + 1)
+
+        while j <= i and Sum > k:
+            Sum -= a[j]
+            j += 1
+        
+        
+        i += 1                      
+        # if i < n:
+        #     Sum += a[i]
+
+    return maxLen
+if __name__ == "__main__":
+    a = [2, 3, 5, 1, 9]
+    k = 10
+    length = func(a, k)
+    print(f"{length}")
+
+
+if __name__ == "__main__":
+    a = [-1, 1, 1]
+    k = 1
+    length = func(a, k)
+    print(f"{length}")
+
     
+# represent by striver 
 
 def f(a, k):
     n = len(a)
@@ -123,82 +174,5 @@ if __name__ == "__main__":
     length = f(a, k)
     print(f"The length of the longest subarray is: {length}")
 
-# r2 
-
-def f(a, k):
-    n = len(a)
-    
-    i = 0
-    j = 0
-
-    Sum = a[0]
-    maxLen = 0
-    
-    while i < n:
-        
-        i += 1
-        if i < n:
-            Sum += a[i]
-            
-        if Sum == k:
-            maxLen = max(maxLen, i - j + 1)    
-
-        while j <= i and Sum > k:
-            Sum -= a[j]
-            j += 1
-        
-    return maxLen
-if __name__ == "__main__":
-    a = [2, 3, 5, 1, 9]
-    k = 10
-    length = f(a, k)
-    print(f"The length of the longest subarray is: {length}")
-
-
 # ...................,,,,,,,,,,,,,,,,,....
 # ,,,,,,,,,,,,,,,,,,,,,,..................
-
-# kadan se ho geya    optimal only for positive +ve only 
-
-# tc n   sc 1 
-def f(arr, k):
-    maxilen = -float("inf")
-    sum = 0 
-    ansStart, ansEnd = -1 , -1 
-
-    for i in range(len(arr)): 
-        if sum == 0 :
-            start = i
-        sum += arr[i]
-        if sum == k:
-            sum = 0 
-            ansStart = start
-            ansEnd = i
-            maxilen = max(maxilen, ansEnd - ansStart + 1)
-        # if sum < 0 : for all +ve, -ve, 0 elm 
-        #     sum = 0  
-    return maxilen  
-         
-if __name__=="__main__":  # yes worjkign for +ve only 
-    arr= [ 2, 3, 5 ,1 ,9 ]
-    k = 10 
-    print(f(arr, k))
-
-
-   
-if __name__=="__main__":
-    arr= [ -1, 1, 1 ]
-    k = 1 
-    print(f(arr, k))  # not working neagtive wale  op is 3 
-                        #  but coming 1 
-
-
-
-
-
-
-
-
-
-
-

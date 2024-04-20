@@ -64,9 +64,23 @@
 # # see no error is coming print() but showing red underline 
 
 # # o/p rep
-        
 # # The Final matrix is:
-        
+# # 1 0 1
+# # 0 0 0
+# # 1 0 1
+
+# also   
+# if __name__ == "__main__":
+#     matrix = [[1, 1, 1], [1, 0, 1], [1, 1, 1]]
+#     n = len(matrix)
+#     m = len(matrix[0])
+#     k = zeroMatrix(matrix, n, m)
+#     for i in range(len(k)):
+#         for j in range(len(k[0])):
+#             print(k[i][j], end= " ")
+#         print()
+# # o/p rep
+# # The Final matrix is:
 # # 1 0 1
 # # 0 0 0
 # # 1 0 1
@@ -108,31 +122,88 @@
 
 # if __name__ == "__main__":
 # 	matrix = [[1, 1, 1], [1, 0, 1], [1, 1, 1]]
-# 	n = len(matrix)    # n is for row   ::: m -> col
+# 	n = len(matrix)    # n is for row  and  m -> col
 # 	m = len(matrix[0])
 # 	ans = zeroMatrix(matrix, n, m)
 
 # 	print("The Final matrix is:")
+
 # 	for row in ans:
 # 	    for ele in row:
 # 	        print(ele, end=" ")
 # 	    print()
 
-
+# ..................
 # # optimal i hold abhi bus sc ko i kiya hai tc is same as better 
 
+# Complexity Analysis
+# Time Complexity: O(2*(N*M)), where N = no. of rows in the matrix and M = no. of columns in the matrix.
+# Reason: In this approach, we are also traversing the entire matrix 2 times and each traversal is taking O(N*M) time complexity.
+
+# Space Complexity: O(1) as we are not using any extra space.
+
+# def zeroMatrix(matrix, n, m):
+#     # int row[n] = {0}; --> matrix[..][0]
+#     # int col[m] = {0}; --> matrix[0][..]
+
+#     col0 = 1
+#     # step 1: Traverse the matrix and
+#     # mark 1st row & col accordingly:
+#     for i in range(n):
+#         for j in range(m):
+#             if matrix[i][j] == 0:
+#                 # mark i-th row:
+#                 matrix[i][0] = 0
+
+#                 # mark j-th column:
+#                 if j != 0:
+#                     matrix[0][j] = 0
+#                 else:
+#                     col0 = 0
+
+#     # Step 2: Mark with 0 from (1,1) to (n-1, m-1):
+#     for i in range(1, n):
+#         for j in range(1, m):
+#             if matrix[i][j] != 0:
+#                 # check for col & row:
+#                 if matrix[i][0] == 0 or matrix[0][j] == 0:
+#                     matrix[i][j] = 0
+
+#     #step 3: Finally mark the 1st col & then 1st row:
+#     if matrix[0][0] == 0:
+#         for j in range(m):
+#             matrix[0][j] = 0
+#     if col0 == 0:
+#         for i in range(n):
+#             matrix[i][0] = 0
+
+#     return matrix
 
 
-# # ...................
-#         # concept main()
-# # if __name__=="__main__":
-# #     matrix = [ [1,2,3,4],[1,2,3,4],[1,2,3,4],[1,2,3,4]]
-# #     k = f(matrix)
-# #     for i in range(len(k)):
-# #         for j in range(len(k[0])):
-# #             print(k[i][j], end = " ")
-# #         print()
-# # ,,,,,,,,,,,,,,,,..
-        
+# if __name__ == "__main__":
+	# matrix = [[1, 1, 1], [1, 0, 1], [1, 1, 1]]
+	# n = len(matrix)
+	# m = len(matrix[0])
+	# ans = zeroMatrix(matrix, n, m)
+
+	# print("The Final matrix is:")
+	# for row in ans:
+	#     for ele in row:
+	#         print(ele, end=" ")
+	#     print()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         

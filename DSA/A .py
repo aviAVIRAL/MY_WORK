@@ -1,44 +1,40 @@
-def is_good_subarray(arr):
-    counts = [0] * 21
-    for num in arr:
-        counts[num] += 1
-    for count in counts:
-        if count % 2 != 0:
-            return False
-    return True
+def f(matrix):
+    n = len(matrix)
+    temp = [[0] * n for _ in range(n)]
+    for i in range(n):
+        for j in range(n):
+            temp[j][n - i - 1] = matrix[i][j]
+    return temp
 
-def get_ans(n, A, q, t, queries):
-    MOD = 10**9 + 7
-    total_sum = 0
-    
-    for query in queries:
-        if query[0] == 1:
-            l, r = query[1], query[2]
-            subarray = A[l-1:r]  # Adjust indices to Python's 0-based indexing
-            if is_good_subarray(subarray):
-                total_sum += (r - l + 1)
-    
-    return total_sum % MOD
+# if __name__ == "__main__":
+#     mat = [[1, 2, 3], 
+#            [4, 5, 6], 
+#            [7, 8, 9]]
+#     k = f(mat)   
+#     for i in range(len(k)):
+#         for j in range(len(k[0])):
+#             print(k[i][j], end=" ")
+#         print()
 
-# Sample Input 1
-n1 = 5
-A1 = [1, 2, 3, 4, 5]
-q1 = 2
-t1 = 3
-queries1 = [[1, 0, 1], [1, 1, 4]]  # Adjusted to 0-based indexing
-
-# Sample Output 1
-output1 = get_ans(n1, A1, q1, t1, queries1)
-print("Sample Output 1:", output1)
+# print("......... ")
 
 
-print()
-n2 = 4
-A2 = [1, 1, 1, 2]
-q2 = 3
-t2 = 3
-queries2 = [[1, 1, 4], [2, 1, 2], [1, 1, 4]]
+# k = [[9, 2, 3, 4 , 5 ], [4, 5, 6, 6 , 8 ], [7, 8, 9, 9 ,  9]]
 
-# Sample Output 2
-output2 = get_ans(n2, A2, q2, t2, queries2)
-print("Sample Output 2:", output2)
+# for i in range(len(k)):
+#     for j in range(len(k)):
+#         print(k[i][j], end=" ")
+#     print()
+
+# print()
+
+k = [[9, 2, 3, 4, 5], [4, 5, 6, 6, 8], [7, 8, 9, 9, 9]]
+
+for i in range(len(k)):
+    for j in range(len(k[0])):
+        print(k[i][j], end=" ")
+    print()
+
+
+
+

@@ -14,10 +14,9 @@
 
 
 
-# brute  :     tc  o(nlogn)     sc 0(n)  # using merge sort  
+# brute  : tc  o(nlogn)  sc 0(1)  # using merge sort  
 
-# better 1  :  tc o( 4n )   sc = o(n)   
-
+# better 1 :  tc o( 4n )   sc = o(n)   
 
 def f (arr ):
     n = len(arr)
@@ -43,8 +42,6 @@ def f (arr ):
 if __name__=="__main__":
     arr= [2,0,1,0,1,2]
     print(f(arr))
-
-
 
 # better 2   tc = 0(2n)   sc = 0(1)
     

@@ -66,43 +66,8 @@ if __name__ == "__main__":
 
 # ..............................
 
-# optimal : Kadan algo its working i n all ( +ve, -ve , 0 )
-# tc n   sc 1 
-def f(arr, k):
-    maxilen = -float("inf")
-    sum = 0 
-    ansStart, ansEnd = -1 , -1 
 
-    for i in range(len(arr)): 
-        if sum == 0 :
-            start = i
-        sum += arr[i]
-        if sum == k:
-            sum = 0 
-            ansStart = start
-            ansEnd = i
-            maxilen = max(maxilen, ansEnd - ansStart + 1)
-        
-        if sum < 0 :
-            sum = 0   # impo 
-
-    return maxilen  
-         
-if __name__=="__main__":
-    arr= [ 2,3,5 ]
-    k =  5
-    print(f(arr, k))
-# if __name__=="__main__":
-#     arr= [ -1, 1, 1]
-#     k = 1 
-#     print(f(arr, k))       not working 
-
-
-
-
-
-
-
+# optimal only hasing walaa
 
 
 
