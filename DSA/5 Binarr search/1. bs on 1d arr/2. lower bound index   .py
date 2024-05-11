@@ -64,7 +64,7 @@ if __name__ == "__main__":
     print("The lower bound is the index:", ind)
 # op  lower bound is the index: 3
 
-# ....repre .....  skip ans to update  : return low ya high
+# ....repre .....  skdate  : reip ans to upturn low ya high
 # optimal  binary seach  TC  O(logN) : SC 1
 
 def lowerBound(arr ,x ) -> int:
@@ -122,8 +122,9 @@ if __name__ == "__main__":
 
 # ..................representation..............
 # import bisect
-# import bisect as bs
+# import bisect as bl
 # from bisect import bisect_left
+# from bisect import bisect_left as bl
     
 # ...................................................
     # concept to inser the elm in arr 
@@ -158,6 +159,20 @@ if __name__ == "__main__":
     ind = lowerBound(arr, x)
     print("The lower bound is the index:", ind)
     print("Updated arr after insertion:", arr)
+# ........................................
+# from bisect import bisect_left as bl
+    
+from bisect import bisect_left as bl
+
+def lowerBound(arr, x):
+
+    return bl(arr, x)
+
+if __name__ == "__main__":
+    arr = [ 1,2,3, 15,15,15,18,19]
+    x = 15 # op The lower bound is the index: 3
+    ind = lowerBound(arr, x)
+    print("Thesndex:", ind)
 
 
 # .................... CONCEPT ..............

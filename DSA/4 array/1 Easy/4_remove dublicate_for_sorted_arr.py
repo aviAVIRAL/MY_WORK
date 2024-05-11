@@ -2,7 +2,21 @@
 #    by use of set data structure  tc = o(nlogn) sc = o(n)
 #    using set data structure : not good for leedcode 
 
-# ...................
+# .........................
+
+arr= [1,1,1,1,1,2,2,2,2,3,3,3,3]
+s = set(arr)
+print(s)    #     {  1,    2,   3 }
+
+j = 0 
+for x in s: 
+    arr[ j]  = x
+    j += 1 
+print(arr)
+
+# op  [1, 2, 3, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3]
+
+# ...........................
 
 def f(arr) : 
     s = set(arr)

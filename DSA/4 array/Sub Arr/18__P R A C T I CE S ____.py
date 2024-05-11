@@ -1,71 +1,56 @@
 
+def f(arr, k):
+    n = len(arr)  # size of the array.
+    mp = {}
+    sum = 0
+    subarrays = []
 
-# Count Subarray sum Equals K
+    for i in range(n):
+        sum += arr[i]
+        if sum == k:
+            subarrays.append(arr[:i + 1])
+        if sum - k in mp:
+            subarrays.append(arr[mp[sum - k] + 1:i + 1])
+        if sum not in mp:  # edge case for zeros 
+            mp[sum] = i
 
+    return subarrays
 
-# 11
-
-# 0
-# Problem Statement: Given an array of integers and an integer k, return the total number of subarrays whose sum equals k.
-
-# A subarray is a contiguous non-empty sequence of elements within an array.
-
-# Pre-requisite: Longest subarray with given sum
-
-# Examples
-# Example 1:
-# Input Format:
-#  N = 4, array[] = {3, 1, 2, 4}, k = 6
-# Result:
-#  2
-# Explanation:
-#  The subarrays that sum up to 6 are [3, 1, 2] and [2, 4].
-
-# Example 2:
-# Input Format:
-#  N = 3, array[] = {1,2,3}, k = 3
-# Result:
-#  2
-# Explanation:
-#  The subarrays that sum up to 3 are [1, 2], and [3].
-
-
-
-# ...................
-#     easy  hai 
-# ...................
+if __name__ == "__main__":
+    arr = [2, 3, 5, 1, 9]
+    k = 10
+    result = f(arr, k)
+    print("Subarrays with sum equal to", k, "are:")
+    for subarray in result:
+        print(subarray)
 
 
 
 
+def f(arr, k):
+    n = len(arr)  # size of the array.
+    mp = {}
+    sum = 0
+    subarrays = []
 
+    for i in range(n):
+        sum += arr[i]
+        if sum == k:
+            subarrays.append(arr[:i + 1])
+        if sum - k in mp:
+            subarrays.append(arr[mp[sum - k] + 1 : i+1])
+        if sum not in mp:  # edge case for zeros 
+            mp[sum] = i
 
+    return subarrays
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+if __name__ == "__main__":
+    arr = [2, 3, 5, 1, 9]
+    k = 10
+    result = f(arr, k)
+    print("Subarrays with sum equal to", k, "are:")
+    for subarray in result:
+        print(subarray)
 
 
 

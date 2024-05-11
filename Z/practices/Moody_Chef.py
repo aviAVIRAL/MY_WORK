@@ -58,14 +58,6 @@ if __name__ == "__main__":
 
 
 
-
-
-
-
-
-
-
-
 # def f(arr,n,l,r):
 #     mincnt = 0 
 #     maxcnt = 0 

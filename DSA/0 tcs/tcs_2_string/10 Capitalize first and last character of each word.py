@@ -40,6 +40,7 @@ print( )
 
 # r2
 
+
 def f (s): 
     
     arr = s.split()

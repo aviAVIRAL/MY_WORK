@@ -123,3 +123,26 @@ ans = arr[ 1: 5 ][ : : -1 ]
 print(ans)
 
 # output [15, 14, 13, 12]
+
+
+# .....................
+# cp
+
+for _ in range(int(input())):
+    n = int(input())
+    arr = list(map(int, input().split()))
+    
+    n = len(arr)
+    temp = [0] * n  # imp temp is fill with nth number of Zeros
+    
+    for i in range(1, n):
+        temp[i - 1] = arr[i]
+    temp[n - 1] = arr[0]  # This line should be outside the loop
+    
+    print(*temp)
+    print(temp) # op 2 3 4 5 1
+                     
+
+# 1
+# 5
+# 1 2 3 4 5

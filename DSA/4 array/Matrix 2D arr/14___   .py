@@ -10,8 +10,17 @@ for row in k:
     print()
 
 
+print()
+x =    [[1, 2, 3, 22, 22], 
+        [4, 5, 6,11,11], 
+        [7, 8, 19,10,11]]
 
-
+n = len(x)
+m = len(x[0])
+for i in range(n):
+    for j in range(m):
+        print(x[i][j], end = " ")
+    print()
 
 
 

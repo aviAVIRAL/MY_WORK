@@ -138,4 +138,32 @@ arr = [2, 2, 1, 1, 1, 2, 2]
 ans = majorityElement(arr)
 print("The majority element is:", ans)
 
+# ....................
+
+# concept   
+arr = [100, 12, 999999, 999999, 2, 2, 1, 1, 1, 2, 9 ]
+from collections import Counter
+sol = Counter(arr)
+print(sol) 
+# op Counter({2: 3, 1: 3, 999999: 2 ,100: 1, 12: 1, 9: 1})
+# indexing issue blunder : acc to cnt oder
+
+# code  methoud using  liberary 
+from collections import Counter
+
+def majorityElement(arr):
+    n = len(arr)
+    sol = Counter(arr)
+
+    for x, y in sol.items(): # same as mp 
+        if y > (n // 2):
+            return x
+
+    return -1
+
+arr = [2, 2, 1, 1, 1, 2, 2]
+ans = majorityElement(arr)
+print("The majority element is:", ans)
+
+print("............")
 

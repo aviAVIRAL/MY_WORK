@@ -1,105 +1,88 @@
 
-
-# ......................
-# r1
+# def f(arr):
+#     n = len(arr)
     
+#     j = 0
+#     for i in range(n):
+#         if arr[i] != 0 :
+#             arr[j] = arr[i]
+#             j+=1 
+      
+#     for i in range(j, n):
+#         arr[i] = 0 
 
-def f(a, k):
-    n = len(a)
-                    # left, right = 0, 0
-    
-    i = 0
-    j = 0
+#     return arr 
 
-    Sum = a[0]
-    maxLen = 0
-    
-    while i < n:
-        while j <= i and Sum > k:
-            Sum -= a[j]
-            j += 1
+# # if __name__=="__main__":
+
+# for _ in range(int(input())):
+#     n = int(input())
+#     arr = list(map(int, input().split()))
+#     print(f(arr))
+
+# ..................................................
         
-        if Sum == k:
-            maxLen = max(maxLen, i - j + 1)
-        
-        i += 1
-        if i < n:
-            Sum += a[i]
-    
-    return maxLen
+#  cp
 
-if __name__ == "__main__":
-    a = [2, 3, 5, 1, 9]
-    k = 10
-    length = f(a, k)
-    print(f"length of longest subarray is: {length}")
+# for _ in range(int(input())):
+#     n = map(int, input().split())
+#     arr = list(map(int, input().split()))
+ 
 
+#     n = len(arr) # imp to define len gth 
+#     j = -1
+#     i = 0
 
+#     while i < n:
+#         if arr[i] == 0:
+#             j = i
+#             break
+#         i += 1
 
+#     i = j + 1
+#     while i < n:
+#         if arr[i] != 0:
+#             arr[j], arr[i] = arr[i], arr[j]
+#             i += 1
+#             j += 1
+#         else:             #  imp* : else 
+#             i += 1
 
-# r1
-
-def f(a, k):
-    n = len(a)
-                    # left, right = 0, 0
-    i = 0
-    j = 0
-
-    Sum = a[0]
-    maxLen = 0
-    
-    while i < n:
-        while j <= i and Sum > k:
-            Sum -= a[j]
-            j += 1
-        
-        if Sum == k: maxLen = max(maxLen, i - j + 1)
-        
-        if i < n: Sum += a[i]
-        i += 1   # see here updation .................
-    
-    return maxLen
-
-if __name__ == "__main__":
-    a = [2, 3, 5, 1, 9]
-    k = 10
-    length = f(a, k)
-    print(f"length of longest subarray is: {length}")
-
-# trick 
-# while j <= i and Sum > k: Sum -= a[j]; j += 1
+#     # print(*arr)  
+#     k = arr
+#     for x in k: 
+#         print(x, end = " ")
 
 
+def f(arr):
+    # arr= [1,2,3] 
+    return arr
+if __name__=="__main__":
+    for _ in range(int(input())):
+        n = map(int, input().split())
+        arr = list(map(int, input().split()))
+        k = f(arr)
+        for x in k : 
+            print(x, end = " ")    
+
+# arr = [ 1,2,3]
+# k = 3 
+# print(f(arr, k ))
+# 2
+# 5
+# 5 0 3 2 0
+# 4
+# 0 0 2 1
 
 
 
 
-# r1
-    
 
-def f(a, k):
-    n = len(a)
-                    # left, right = 0, 0
-    
-    i = 0
-    j = 0
 
-    Sum = a[0]
-    maxLen = 0
-    
-    while i < n:
-        while j <= i and Sum > k:  Sum -= a[j] ; j += 1
-        if Sum == k: maxLen = max(maxLen, i - j + 1)
-        i += 1
-        if i < n: Sum += a[i]
-    
-    return maxLen
 
-if __name__ == "__main__":
-    a = [2, 3, 5, 1, 9]
-    k = 10
-    length = f(a, k)
-    print(f"length of longest subarray is: {length}")
+
+
+
 
 
 

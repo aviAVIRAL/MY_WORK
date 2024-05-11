@@ -1,91 +1,30 @@
 
+# for _ in range(int(input())):
+#     k = int(input())
+#     arr = list(map(int, input().split()))
 
-from typing import List
+#     maxi = -1
+#     n = len(arr)
+#     for i in range(n):
+#         s = 0
+#         for j in range(i, n):
+#             s += arr[j]
+#             if s == k and (j - i + 1) > maxi : 
+#                 # maxi = max(maxi, j - i + 1 )
+#                 maxi = j - i + 1
+#                 subarr = arr[i: j + 1]
+#     print(maxi, subarr)
 
-def nextGreaterPermutation(A: List[int]) -> List[int]:
-    n = len(A) # size of the array.
+# # # ip 
+# # 2 test cases 
+# # 10 k 
+# # 2 3 5 1 9  arr 
+# # 3 [2, 3, 5] op
 
-    # Step 1: Find the break point:
-    ind = -1 # break point
-    for i in range(n-2, -1, -1):
-        if A[i] < A[i + 1]:
-            # index i is the break point
-            ind = i
-            break
+# # 15 k 
+# # 5 5 5 20 arr 
+# # 3 [5, 5, 5] op
 
-    # If break point does not exist:
-    if ind == -1:
-        # reverse the whole array:
-        A.reverse()
-        return A
 
-    # Step 2: Find the next greater element
-    #         and swap it with arr[ind]:
-    for i in range(n - 1, ind, -1):
-        if A[i] > A[ind]:
-            A[i], A[ind] = A[ind], A[i]
-            break
 
-    # Step 3: reverse the right half:
-    A[ind+1:] = reversed(A[ind+1:])
 
-# or also use  
-# A[:] = A[:ind+1] + A[ind+1:][::-1]
-
-    return A
-
-if __name__ == "__main__":
-    A = [2, 1, 5, 4, 3, 0, 0]
-    ans = nextGreaterPermutation(A)
-
-    print("The next permutation is: [", end="")
-    for it in ans:
-        print(it, end=" ")
-    print("]")
-
-print()
-
-from typing import List
-
-def nextGreaterPermutation(A: List[int]) -> List[int]:
-    n = len(A) # size of the array.
-
-    # Step 1: Find the break point:
-    ind = -1 # break point
-    for i in range(n-2, -1, -1):
-        if A[i] < A[i + 1]:
-            # index i is the break point
-            ind = i
-            break
-        
-    # If break point does not exist:
-    if ind == -1:
-        # reverse the whole array:
-        A.reverse()
-        return A
-
-    # Step 2: Find the next greater element
-    #         and swap it with arr[ind]:
-    for i in range(n - 1, ind, -1):
-        if A[i] > A[ind]:
-            A[i], A[ind] = A[ind], A[i]
-            break
-
-    # Step 3: reverse the right half:
-    A[ind+1:] = reversed(A[ind+1:])
-
-# or also use  
-# A[:] = A[:ind+1] + A[ind+1:][::-1]
-
-    return A
-
-if __name__ == "__main__":
-    A = [2, 1, 5, 4, 3, 0, 0]
-    ans = nextGreaterPermutation(A)
-
-    print("The next permutation is: [", end="")
-    for it in ans:
-        print(it, end=" ")
-    print("]")
-
-print()

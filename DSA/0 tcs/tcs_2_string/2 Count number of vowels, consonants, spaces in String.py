@@ -25,15 +25,9 @@ if __name__=="__main__":
     s = "Take u forward is Awesome"
     print(f(s)) 
 
-
-# out put  
-    
-# (10, 11, 4) 
+# out put   (10, 11, 4) 
 
 print( )
-print( )
-
-
 
 def f(s): 
     s = s.lower()

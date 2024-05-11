@@ -23,6 +23,7 @@ def f(matrix, n, m):
     for key, value in mp.items(): 
         if value % 2 == 0:
             ans += value * key  
+
     return ans
 
 # also rep as  concept 
@@ -64,6 +65,7 @@ def f(mat):
     for key, value in mp.items(): 
         if value % 2 == 0:
             ans += value * key  
+            
     return ans
 
 # also rep as  concept 

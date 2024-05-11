@@ -193,7 +193,37 @@
 	#     print()
 
 
+# .................
+# CP 
 
+
+def f(n,m, mat):
+    row = [0] * n  #  keep track
+    col = [0] * m  
+    for i in range(n):
+        for j in range(m):
+            if mat[i][j] == 0:
+                row[i] = 1
+                col[j] = 1
+    for i in range(n):
+        for j in range(m):
+            if row[i] or col[j]: # if row[i] == 1 or col[j] == 1: also represent as 
+                mat[i][j] = 0  
+    return mat
+
+    
+n, m = map(int, input().split())
+mat = [list(map(int, input().split())) for _ in range(n)]
+
+k = f(n,m , mat)
+
+for x in k:     
+    print(*x)  
+
+# op representation 
+# 3 4 5
+# 2 4 6
+# 4 6 7
 
 
 

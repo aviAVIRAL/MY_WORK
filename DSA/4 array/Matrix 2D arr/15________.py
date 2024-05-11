@@ -1,103 +1,36 @@
+def setZeroes(mat):
+    rows = len(mat)
+    cols = len(mat[0])
+    first_col_zero = 1
+
+    for i in range(rows):
+        if mat[i][0] == 0:
+            first_col_zero = 0
+        for j in range(1, cols):
+            if mat[i][j] == 0:
+                mat[i][0] = 0
+                mat[0][j] = 0
+
+    for i in range(rows - 1, -1, -1):
+        for j in range(cols - 1, 0, -1):
+            if mat[i][0] == 0 or mat[0][j] == 0:
+                mat[i][j] = 0
+        if first_col_zero == 0:
+            mat[i][0] = 0
+
+n, m = map(int, input().split())
+assert 1 <= n <= 100
+assert 1 <= m <= 100
+
+mat = [list(map(int, input().split())) for _ in range(n)]
+
+setZeroes(mat)
+
+for row in mat:
+    print(*row)
 
 
-print("...........................")
-
-arr = [ 1, 2 ,3]
-print(*arr)
-                         # unpack trick 
-str = "123"
-print(*str)
-
-print("...........................")
-
-def fa(matrix):
-    n = len(matrix)
-    temp = [[0] * n for _ in range(n)]
-    for i in range(n):
-        for j in range(n):
-            temp[j][n - i - 1] = matrix[i][j]
-    return temp
-
-if __name__ == "__main__":
-    mat = [[1, 2, 3], 
-           [4, 5, 6], 
-           [7, 8, 9]]
-    k = fa(mat)   
-    for row in k:
-        for elem in row:
-            print(elem, end=" ")
-        print()
-
-# k =    [[1, 2, 3, 12], 
-#         [4, 5, 6, 12], 
-#         [7, 8, 9, 12]]
-
-# for row in k:
-#     for elem in row:
-#         print(elem, end=" ")
-#     print()
-
-print(".//..//." )
-print( )
-
-
-def f(matrix):
-    n = len(matrix)
-    temp = [[0] * n for _ in range(n)]
-    for i in range(n):
-        for j in range(n):
-            temp[j][n - i - 1] = matrix[i][j]
-    return temp
-
-
-k = [[9, 2, 3, 4, 5], [4, 5, 6, 6, 8], [7, 8, 9, 9, 9]]
-
-for i in range(len(k)):
-    for j in range(len(k[0])):
-        print(k[i][j], end=" ")
-    print()
-
-
-
-
-print("..   ....   ....   ..")
-
-def f(matrix):
-    n = len(matrix)
-    temp = [[0] * n for _ in range(n)]
-    for i in range(n):
-        for j in range(n):
-            temp[j][n - i - 1] = matrix[i][j]
-    return temp
-
-
-k = [[9, 2, 3, 4, 5], [4, 5, 6, 6, 8], [7, 8, 9, 9, 9]]
-
-for row in k : 
-    for x in row : 
-        print(x , end = " ")
-    print()
-# for i in range(len(k)):
-#     for j in range(len(k[0])):
-#         print(k[i][j], end=" ")
-#     print()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# 3 3
+# 4 6 0
+# 8 2 1
+# 3 1 5

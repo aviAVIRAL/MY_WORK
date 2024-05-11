@@ -1,17 +1,20 @@
+# .......................................
+# ............. H A S  M a p ...........................
+
+# better 1  : + , 0 , -    for all edge cases 
+    
+    # tc = 0(n)^2  sc = 0(n)
 
 def f(arr, k):
     n = len(arr)  # size of the array.
     mp = {}
     sum = 0
     MaxiLen = 0
-    
-    cnt  = 0 
     for i in range(n):
 
         sum += arr[i]
 
         if sum == k:
-            cnt += 1
             MaxiLen = max(MaxiLen, i + 1)
 
         rem = sum - k
@@ -22,7 +25,7 @@ def f(arr, k):
         if sum not in mp:  #edge case for zeros 
             mp[sum] = i
 
-    return MaxiLen, cnt 
+    return MaxiLen
 
 if __name__ == "__main__":
     arr = [2, 3, 5, 1, 9]
@@ -36,35 +39,39 @@ if __name__ == "__main__":
     length = f(a, k)
     print(f"The length of the longest subarray is: {length}")
 
-from collections import defaultdict
 
-def findAllSubarraysWithGivenSum(arr, k):
-    n = len(arr) # size of the given array.
-    mpp = defaultdict(int)
-    preSum = 0
-    cnt = 0
+print()
 
-    mpp[0] = 1 # Setting 0 in the map.
+
+def f(arr, k):
+    n = len(arr)  # size of the array.
+    mp = {}
+    sum = 0
+    subarrays = []
+
     for i in range(n):
-        # add current element to prefix Sum:
-        preSum += arr[i]
+        sum += arr[i]
+        if sum == k:
+            subarrays.append(arr[:i + 1])
+        if sum - k in mp:
+            subarrays.append(arr[mp[sum - k] + 1:i + 1])
+        if sum not in mp:  # edge case for zeros 
+            mp[sum] = i
 
-        # Calculate x-k:
-        remove = preSum - k
+    return subarrays
 
-        # Add the number of subarrays to be removed:
-        cnt += mpp[remove]
-
-        # Update the count of prefix sum
-        # in the map.
-        mpp[preSum] += 1
-
-    return cnt
-
-
-if __name__ == '__main__':
-    arr = [2,3,5 , 1, 9]
+if __name__ == "__main__":
+    arr = [2, 3, 5, 1, 9]
     k = 10
-    cnt = findAllSubarraysWithGivenSum(arr, k)
-    print("The number of subarrays is:", cnt)
+    result = f(arr, k)
+    print("Subarrays with sum equal to", k, "are:")
+    for subarray in result:
+        print(subarray)
+
+
+
+
+
+
+
 

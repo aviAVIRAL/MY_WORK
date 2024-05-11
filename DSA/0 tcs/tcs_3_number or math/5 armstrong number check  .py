@@ -79,6 +79,20 @@ if __name__ == "__main__":
         print("No, it is not an Armstrong Number")
 
 
+# trick 
+
+s = "153" 
+sum = 0 
+for x in s:
+    x = int(x)
+    sum += pow(x,3)
+
+if sum == int(s):
+    print("yes")
+else : 
+    print("no")
+
+
 
 
 

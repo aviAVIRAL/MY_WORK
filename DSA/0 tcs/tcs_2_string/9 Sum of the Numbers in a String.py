@@ -16,17 +16,13 @@
 # ..............
 
 def f( s ):
-
     n = len(s)
-    
     str = ""
     sum = 0
 
     for i in range(n):
-        
         if '0' <= s[i] <= '9':
             str += s[i]
-        
         else:
             sum += int(str)
             str = ""
@@ -34,8 +30,8 @@ def f( s ):
     return sum + int(str)
 
 if __name__ == "__main__":
-    s = "1a30z67"
-    print(f (s))
+    s = "1a30z67"    
+    print(f (s))   
 
 # ,,,,,,,,,,,,,,,,,,,,,,,,
     

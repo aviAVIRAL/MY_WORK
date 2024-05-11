@@ -1,63 +1,29 @@
 
+# concept
+arr = [2, 2, 1, 1, 1, 2, 9 ]
+from collections import Counter
+sol = Counter(arr)
+print(sol)
 
-from itertools import permutations
+# code 
+from collections import Counter
 
-arr = [1, 2, 3]
-k = permutations(arr)
+def majorityElement(arr):
+    n = len(arr)
+    # Count the occurrences of each element using Counter
+    counter = Counter(arr)
 
-for x in k :
-    print(x, end = " ")
+    # Searching for the majority element
+    for num, count in counter.items():
+        if count > (n // 2):
+            return num
 
-print("///////////////")
+    return -1
 
-print(",,,,,,,,,,")
+arr = [2, 2, 1, 1, 1, 2, 2]
+ans = majorityElement(arr)
+print("The majority element is:", ans)
 
-from itertools import permutations
-
-arr = [1, 2, 3]
-k = [x for x in permutations(arr)]
-
-print("///////////////")
-for x,c,v in k:
-    print(x,c,v, end = " ")
-
-print("...........")
-for i in range(len(k)):
-    print(k[i], end = " ")
-
-
-
-print("asasdkjbn")
-from itertools import permutations
-arr = [1, 2, 3]
-k = [x for x in permutations(arr)]
-print("///////////////")
-for x in k:
-    print(x, end = " ")
-
-
-# print()
-# print(k)
-# t = (1,3,2)
-# for i in range(len(k)):
-#     if k[i] == t :
-#         print(k[i+1])
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print("............")
 
 

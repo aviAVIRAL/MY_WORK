@@ -80,9 +80,16 @@ if __name__ == "__main__":
 
 # o/p:  a 2 d 1 e 1 f 1 k 1 o 1 r 2 t 1 u 1 w 1   : automaticaly space between vaeriables 
 
+# imp  p# concept 
+# if __name__ == "__main__":
+#     s = "ta keufo rw ard"
+#     ans = f(s)
 
-
-
+#     for y in ans :
+#         if y != " ":   # to avoid whitspace 
+#             print( f"{y}{ans[y]}"  , end =" ")
+#     print()
+# print()
 
 
 

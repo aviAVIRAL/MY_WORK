@@ -48,4 +48,27 @@ if __name__ == "__main__":
     count_pal(100, 2000)
 
 
+# trick 
+
+def f(n):
+    st = str(n)
+    brr = st[::-1]
+    if st == brr:
+        return True 
+    else:
+        return False
+    # y = 0
+    # x = n
+    # while x > 0:
+    #     y = y * 10 + x % 10
+    #     x = x // 10
+    # return n == y
+
+if __name__ == "__main__":
+    min_val = 100
+    max_val = 150
+    
+    for i in range(min_val, max_val + 1):
+        if f(i) == True:
+            print(i, end=" ")
 

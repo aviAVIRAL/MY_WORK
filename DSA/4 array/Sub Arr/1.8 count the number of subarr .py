@@ -22,7 +22,7 @@ if __name__ == "__main__":
     k = 10
     print(f(arr , k ))
 
-# (3, 2) op
+# (maxi length 3, no. of subarr 2) op
 # (3, 3) op 
 if __name__ == "__main__":
     arr = [1, -1, 1]

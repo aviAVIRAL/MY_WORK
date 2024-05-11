@@ -58,7 +58,49 @@ def maxSubarraySum(arr):
 arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
 maxSum = maxSubarraySum(arr)
 print("The maximum subarray sum is:", maxSum)
+# ..............................................
 
+#      concept 
+
+# error in code 
+arr = [ 1, 9, 10, -30, 5, 1 , -100]
+maxi = -1
+temp =  [] 
+n = len(arr)
+for i in range(n):
+    sum = 0
+    for j in range(i,n):
+        sum += arr[j]
+        if sum > maxi :
+            maxi = max(maxi, sum )
+            temp.append(arr[i:j+1]) #  see here 
+print( maxi) # every time we append so many subarr come 
+print(temp)
+print()
+# print()
+# 20  maximum summation aaraha hai
+# [[1], [1, 9], [1, 9, 10]] many subarry 
+
+# correct code 
+arr = [1, 9, 10, -30, 5, 1 , - 100]
+
+maxi = -1
+subarr = []
+n = len(arr)
+for i in range(n):
+    sum = 0
+    for j in range(i, n):
+        sum += arr[j]
+        if sum > maxi:
+            maxi = sum
+            subarr = arr[i:j+1] # see here  
+print( maxi) # variable mein store and update 
+print(subarr)
+
+# op 
+# 20  maxi summation
+# [1, 9, 10]  maxi summation that subarry 
+    
 
 # ...................................
 # optimal  kadan algo    tc = 0(n)  sc = 0(1)
