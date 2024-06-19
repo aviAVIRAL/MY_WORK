@@ -63,8 +63,8 @@ def aggressiveCows(stalls, k):
     n = len(stalls)  # size of array
     stalls.sort()  # sort the stalls
 
-    low = 1
-    high = stalls[n - 1] - stalls[0]
+    low = 1   
+    high = stalls[n - 1] - stalls[0] #max(stalls) - min(salls)
     # apply binary search
     while low <= high:
         mid = (low + high) // 2

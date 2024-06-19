@@ -86,7 +86,6 @@ def findPages(arr, n, m):
             low = mid + 1
     return low
 
-
 arr = [25, 46, 28, 49, 24]
 n = 5
 m = 4

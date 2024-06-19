@@ -51,3 +51,26 @@ def fun(n):
 n = 27 
 print(fun(n))
 
+# .............REP ................
+
+
+def f(n, x):
+    l, h = 1, n
+    ans = 0
+    while (l <= h):
+        m = (l + h) // 2
+        if m**x > n:
+            h = m - 1
+        else:
+            ans = m
+            l = m + 1
+# I M P    concept    to     write 
+    if ans**x == n: return ans 
+    else : return -1              
+    
+print(f(27, 3))   # OP 3
+print(f(89, 3))   # OP -1 
+ 
+
+
+ 

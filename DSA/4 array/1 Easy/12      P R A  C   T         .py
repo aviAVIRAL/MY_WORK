@@ -1,21 +1,24 @@
-
-def find_missing_number(arr):
+def f(arr):
     n = len(arr)
-    freq = [0] * 100
-
-    for i in range(n):
-        freq[arr[i]] += 1
-
-    for i in range(1, 100):
-        if freq[i] == 0:
-            
-
-            return i
+    # edge case 
+    if arr[0] != arr[1]: return arr[0]
+    if arr[n-1] != arr[n-2]: return arr[n-1]
+    
+    for i in range(1, n-2):
+        if arr[i] != arr[i-1] and arr[i] != arr[i+1]:
+            return arr[i]
     return -1 
-arr =[1,2,3,5]
-ans =find_missing_number(arr)
-print(ans)
 
+
+if __name__=="__main__": 
+    arr = [1, 1, 2, 3, 3, 4, 4]
+    print(f(arr))
+
+
+
+if __name__=="__main__": 
+    arr = [8, 1, 1, 3, 3, 4, 4]
+    print(f(arr))
 
 
 

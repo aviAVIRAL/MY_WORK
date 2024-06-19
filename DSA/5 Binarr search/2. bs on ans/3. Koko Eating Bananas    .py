@@ -66,13 +66,16 @@ if __name__=="__main__":
     h = 8
     ans = f(arr, h)
     print("Koko should eat at least", ans, "bananas/hr.")
+   
+# ....  .... ... ..... .. ..... ..  . ..... ..
+
 #  brute also rep 
 
 import math
 
 def  possible_OR_not(arr, hourly    ,h): # hourly => banan/hr 
     n = len(arr)
-    totalH = 0
+    totalH = 0 
     
     for i in range(n):
         totalH += math.ceil(arr[i] / hourly)

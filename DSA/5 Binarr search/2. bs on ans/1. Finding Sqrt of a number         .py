@@ -45,6 +45,12 @@ ans = math.sqrt(n)   # Using sqrt() function
 
 print(ans)       # op  5.0990195135   float value   
 print(int(ans))  # op  5              int value     
+# r2
+
+from math import sqrt as r
+n = 25 
+ans = r(n)
+print(ans)
 
 # m2   tc O(1)  sc O(1)
 n = 25

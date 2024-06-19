@@ -11,7 +11,7 @@
 # m1 
 def f(X):
     Y = 0
-    while X != 0:
+    while X != 0:  # while X :
         digit = X % 10
         Y = Y * 10 + digit
         X = X // 10
@@ -38,5 +38,12 @@ i = int(y)
 print(i)
 
 # ...................
+# # rule 
+# 7 % 10 is 7   : 10 se niche ka number hai 
+# 7 // 10 is 0   : 10 se niche ka number hai 
+
+
+
+
 
 

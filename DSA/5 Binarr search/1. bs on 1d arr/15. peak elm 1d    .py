@@ -28,9 +28,12 @@
 
 
 
-# brute aapne app 
+# brute aapne app karo :
+
+
 # optimal use binary search   tc   logN 
-def findPeakElement(arr: [int]) -> int:
+
+def findPeakElement(arr):
     n = len(arr)  # Size of the array
 
     # Edge cases:

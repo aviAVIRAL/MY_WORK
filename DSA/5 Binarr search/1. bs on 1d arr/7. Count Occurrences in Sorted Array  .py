@@ -15,7 +15,7 @@
 
 # brute  tc n  
 
-def count(arr,n,x) :
+def count(arr,n,x):
     cnt = 0
     for i in range(n):
         if arr[i] == x:
