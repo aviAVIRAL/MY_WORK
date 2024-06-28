@@ -14,14 +14,14 @@ n = len(arr)
 print(f(arr, 0 ,3))
 
 
-print(",,,")
+print(",hhhhhhh,,")
 
 
 # reverse arr in recursion 
 def f(arr, i, j):
     
     if i>j : 
-        return 
+        return  # none return defalut
     arr[i], arr[j] = arr[j], arr[i]
     f(arr, i+1 , j-1 )
 
@@ -35,6 +35,7 @@ print(arr)  # op is correct
 # of f, but f doesn't return anything. Instead, 
 # f modifies the list arr in place. To correct this, you should first call f to modify arr, and then print arr separately.
 
+print(",hhhhhhh,,")
 
 
 
