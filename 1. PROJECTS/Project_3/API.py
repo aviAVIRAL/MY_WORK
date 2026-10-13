@@ -38,7 +38,6 @@ def text_to_wav(voice_name: str, text: str):
 
     # Debugging statement: print the generated text
     print("Generated text:")
-    # print(text)
 
     language_code = "-".join(voice_name.split("-")[:2])
     text_input = tts.SynthesisInput(text=text)
@@ -83,8 +82,6 @@ def generate_custom_story():
     text_to_wav(voice_name, generated_text)
     
     return jsonify({'generated_text': generated_text, 'speech_generated': True})
-
-
 
 
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "complete-Xn1-78-flash-1893332e"
