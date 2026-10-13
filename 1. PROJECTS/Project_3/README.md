@@ -1,6 +1,6 @@
-# JARVIS — AI-Powered Interactive Storytelling System
+# JARVIS - AI Powered Interactive Storytelling System
 
-An AI-powered, voice-controlled interactive storytelling application that generates imaginative, educational, and personalized stories for children using Google's Gemini Pro model. JARVIS combines speech recognition, generative AI, text-to-speech synthesis, and Python-based backend services to deliver an engaging storytelling experience through natural voice interaction.
+An AI powered, voice-controlled interactive storytelling application that generates imaginative, educational, and personalized stories for children using Google's Gemini Pro model. JARVIS combines speech recognition, generative AI, text-to-speech synthesis, and Python-based backend services to deliver an engaging storytelling experience through natural voice interaction.
 
 The system allows users to activate voice commands, generate adventure stories, listen to AI-generated narration, and interact with a voice assistant. It also includes a Flask REST API for generating and returning stories in JSON format.
 
