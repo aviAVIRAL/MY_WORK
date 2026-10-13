@@ -128,7 +128,7 @@ def transcribe_audio():
         operation = client.long_running_recognize(config=config, audio=audio)
 
         try:
-            response = operation.result(timeout=90)
+            response = operation.result(timeout=40)
             transcripts = [result.alternatives[0].transcript for result in response.results]
             return jsonify({"transcripts": transcripts})
         except Exception as e:
