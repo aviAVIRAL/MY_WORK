@@ -157,7 +157,7 @@ text
                    v
           Command Identification
                    |
-          +--++
+          
           |        |         |
           v        v         v
        Greeting  Open Web  Generate Story
@@ -171,7 +171,7 @@ text
           |                  v
           |            Generated Text
           |                  |
-          +--++
+          
                    |
                    v
           Google Cloud TTS
