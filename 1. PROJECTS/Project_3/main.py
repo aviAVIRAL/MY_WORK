@@ -32,8 +32,7 @@ def recognize_speech():
             return "open_chrome"
         elif any(keyword in phrase.lower() for keyword in [ "write the story", "generate the story", "tell me a story","narrate me a story", "can you write the story", "can you narrate me a story","write story"]):
             return "generate_story"   
-        # elif any(keyword in phrase.lower() for keyword in []):
-        #     return "write_story"
+ 
         else:
             print("Command not recognized.")
             return None
