@@ -16,7 +16,7 @@ The project generates an HTML map that can be opened in a web browser.
 - **Geocoding:** Converts the identified region into approximate latitude and longitude coordinates using the OpenCage Geocoding API.
 - **Interactive Map:** Creates a map using Folium and OpenStreetMap.
 - **Location Marker:** Displays a marker with a popup showing the identified region.
-- **HTML Export:** Saves the generated map as `GoogleMaps.html` for viewing in a web browser.
+- **HTML Export:** Saves the generated map as `GoogleMap.html` for viewing in a web browser.
 
 ## 🛠️ Technologies Used
 
@@ -36,7 +36,7 @@ The project generates an HTML map that can be opened in a web browser.
 4. The carrier name is retrieved when available.
 5. OpenCage Geocoding converts the region name into latitude and longitude.
 6. Folium creates an interactive map centered on the returned coordinates.
-7. A marker is added to the map, and the output is saved as `GoogleMaps.html`.
+7. A marker is added to the map, and the output is saved as `GoogleMap.html`.
 
 ## 📂 Project Structure
 
@@ -44,7 +44,7 @@ The project generates an HTML map that can be opened in a web browser.
 Phone-Number-Location-Tracker/
 │
 ├── main.py
-├── GoogleMaps.html
+├── GoogleMap.html
 ├── requirements.txt
 ├── .env
 ├── .gitignore
@@ -54,7 +54,7 @@ Phone-Number-Location-Tracker/
 **File descriptions:**
 
 - `main.py` — Contains the Python application logic.
-- `GoogleMaps.html` — Generated interactive map.
+- `GoogleMap.html` — Generated interactive map.
 - `requirements.txt` — Lists the Python dependencies.
 - `.env` — Stores the OpenCage API key locally.
 - `.gitignore` — Prevents sensitive and unnecessary files from being committed.
@@ -139,7 +139,7 @@ The application will display the available regional and carrier information, ret
 
 ### 5. View the Map
 
-After successful execution, open `GoogleMaps.html` in a web browser to view the interactive map.
+After successful execution, open `GoogleMap.html` in a web browser to view the interactive map.
 
 An active internet connection is required to retrieve OpenStreetMap tiles.
 
@@ -152,7 +152,7 @@ The generated map includes:
 - A popup displaying the identified region.
 - Zoom and pan controls for exploring the map.
 
-**Output file:** `GoogleMaps.html`
+**Output file:** `GoogleMap.html`
 
 ## ⚠️ Limitations
 
