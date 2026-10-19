@@ -3,9 +3,7 @@ import phonenumbers
 from phonenumbers import geocoder 
 import folium
 
-
-# key carefull use to  be some time only  
-Key = "ee8b118e18ff4196b15c7f25db1fee74"
+platform_key_cs = "xyz"
 
 number = input("Enter phone number with country code:") 
 check_number = phonenumbers.parse(number)
