@@ -102,13 +102,13 @@ Store the key in an environment variable named `OPENCAGE_API_KEY` rather than ha
 For Windows PowerShell:
 
 ```powershell
-$env:OPENCAGE_API_KEY="your_api_key_here"
+$env:OPENCAGE_API_KEY="_api_key_"
 ```
 
 For macOS or Linux:
 
 ```bash
-export OPENCAGE_API_KEY="your_api_key_here"
+export OPENCAGE_API_KEY="_api_key_"
 ```
 
 Update the Python code to read the environment variable:
@@ -116,7 +116,7 @@ Update the Python code to read the environment variable:
 ```python
 import os
 
-Key = os.environ["OPENCAGE_API_KEY"]
+Key = os.environ["api_key"]
 ```
 
 Replace the existing hardcoded API key assignment with this code.
@@ -132,7 +132,7 @@ Enter a phone number with its international country code when prompted.
 Example input:
 
 ```text
-+14156652671
++1417752671
 ```
 
 The application will display the available regional and carrier information, retrieve coordinates, and generate the map.
@@ -188,17 +188,3 @@ venv/
 - Build a simple web interface for entering phone numbers.
 - Add configurable map zoom levels and map styles.
 - Improve logging and API request handling.
-
-## 👨‍💻 Author
-
-**Aviral Sharma**
-
-GitHub: [Your GitHub Profile](https://github.com/)
-
-LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/)
-
-*Replace the profile links with your actual profile URLs.*
-
-## 📄 License
-
-This project is intended for educational and personal learning purposes. Add an appropriate open-source license, such as the MIT License, if you want others to reuse and modify the project.
